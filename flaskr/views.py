@@ -1,4 +1,3 @@
-
 from random import random
 from flask import Blueprint, render_template, request, jsonify
 from sqlalchemy import func
@@ -7,7 +6,7 @@ from . import db
 
 views = Blueprint('views', __name__, url_prefix='/')
 
-@views.route('/')
+@views.route('/', methods=['GET'])
 def home():
     # words = Word1.query.all()
     # for word in words:
