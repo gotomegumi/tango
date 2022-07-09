@@ -1,8 +1,13 @@
+.item_wrap{
+    margin-top: 100px;
+}
+
 .card-wrap{
     position: fixed;
     inset: 0;
     margin: auto;
-    width: 400px;
+    margin-top: 160px;
+    max-width: 400px;
     height: 500px;
     text-align: center;
     border: solid 4px black;
@@ -78,8 +83,6 @@
     border-radius: 20px;
     background-color: white;
     cursor: pointer;
-    /* background-color: rgb(251, 234, 189); */
-    /* box-shadow: rgb(255, 187, 0)  3px 3px,black 3px 3px 0 1px ; */
 }
 
 .answer-btn:hover{
@@ -93,7 +96,7 @@
     box-shadow: none;
 }
 
-.progress{
+/* .progress{
     border: solid 2px black;
     margin-left: 0;
     width: 20px;
@@ -101,7 +104,7 @@
     height: 30px;
     border-radius: 5px;
     background-color: rgb(176, 237, 255);
-}
+} */
 
 .test{
     display: block;
@@ -125,11 +128,11 @@
 
 .bar2{
     width: 400px;
-    background-color: rgb(255, 251, 231);
+    background-color: rgb(219, 255, 187);
 }
 
 #bar2{
-    background-color: rgb(255, 207, 111);
+    background-color: rgb(162, 229, 95);
     padding-left: 20px;
     height: 30px;
     transition: 0.5;
@@ -145,14 +148,14 @@
 }    
 
 .bar3-wrap{
-    background-color: rgb(229, 255, 237);
+    background-color: rgb(201, 247, 255);
     line-height: 50px;
     margin-bottom: 20px;
     overflow: hidden;
 }
 
 #result-bar, #result-bar2{
-    background-color: rgb(165, 238, 187);
+    background-color: rgb(123, 220, 255);
     transition: 0.7s;
     transform: translate(-100%, 0);
 }
@@ -164,12 +167,60 @@
 
 .last-goto{
     margin-top: 40px;
-    color: black;
 }
 
 .last-goto a{
-    margin-left: 10px;
-    margin-right: 10px;
-    color: black;
+    color: rgb(0, 0, 61);
+    font-size: 20px;
 }
 
+.lg1{
+    margin: 0 15px;
+}
+
+.lg2{
+    margin-top: 20px;
+    display: block;
+}
+
+@media screen and (max-width:600px){
+
+    .card-wrap{
+        margin-top: 135px;
+    }
+
+    .bar2{
+        width: 100%;
+    }
+
+    .h1{
+        margin-right: 7px;
+    }
+
+    .answer{
+        position: absolute;
+        top: 230px;
+    }
+
+    .answer-btn{
+        width: 31%;
+        height: 150px;
+        margin-left: 0;
+        margin-right: 0;
+        border: solid 3px black;
+    }
+}
+
+@media screen and (max-width:450px){
+    .card-wrap{
+        max-width: 400px;
+        margin-left: 5px;
+        margin-right: 23px;
+    }
+}
+
+@media screen and (max-width:800px){
+}
+
+@media screen and (max-width:1024px){
+}

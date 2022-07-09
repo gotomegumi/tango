@@ -9,7 +9,6 @@ li{
 }
 
 header{
-    height: 100px;
     background-color: rgb(255, 207, 139);
     display: flex;
     justify-content: space-between;
