@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Tango{% endblock %}
+{% block content %}
+<h2>Status</h2>
+<div class="status-wrap">
+    <div class="status box">
+        <p>進歩</p>
+        <div class="bar-wrap bar1-wrap">
+            <div class="bar bar1" style="width:{{ progress }}%">{{ progress }}%</div>
+        </div>
+        <p>section1の{{ progress }}%を学習しました。</p>
+    </div>
+    <div class="status box">
+        <p class="st2-1">定着度（正解率）</p>
+        <!-- <p>{{ answer_rate }}%</p> -->
+        <div class="bar-wrap bar1-wrap">
+            <div class="bar bar1" style="width:{{ answer_rate }}%">{{ answer_rate }}%</div>
+        </div>
+        <p>section1の<span style="color: rgb(0, 117, 212);">{{ answer_rate }}%</span>を<br>記憶しました。</p>
+        <p class="st2-2">KEEP UP!</p>
+    </div>
+    <div class="status box">Daily</div>
+</div>
+<h2>Section</h2>
+<div>
+    <li class="section box">section1:特に分類なし</li>
+    <li class="section box">section1:日常会話</li>
+    <li class="section box">section1:台所用品</li>
+    <li class="section box">section1:特に分類なし</li>
+    <li class="section box">section1:特に分類なし</li>
+</div>
+
+<div  class="cover"></div>
+<div class="start-modal">
+    <div class="start-modal-wrap">
+        <p class="start-question">はじめますか？</p>
+        <p><a href="/section1/test" class="start box">スタート！</a></p>
+        <p class="start-back">もどる</p>
+    </div>
+</div>
+
+{% endblock %}

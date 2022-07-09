@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>TANGO!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="../static/css/style_section.css">
+        <link rel="stylesheet" href="../static/css/style_home.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">    
+    </head>
+    <body>
+        <header>
+            <div class="header-title"><a href="/">TANGO</a></div>
+            <nav class="nav-bar">
+                <li class="nav-link"><a href="/section1/test">section1</a></li>
+                <li class="nav-link"><a href="#">acount</a></li>
+                <li class="nav-link"><a href="#">progress</a></li>
+            </nav>
+        </header>
+
+        <div class="content-wrap">
+        {% block content %}
+        {% endblock %}
+        </div>    
+        <script src="/static/script.js"></script>
+    </body>
+</html>

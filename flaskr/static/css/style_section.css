@@ -1,0 +1,175 @@
+.card-wrap{
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: 400px;
+    height: 500px;
+    text-align: center;
+    border: solid 4px black;
+    border-radius: 25px;
+    box-shadow: rgb(255, 187, 0) 15px 15px, black 15px 15px 0 4px;
+    z-index: 50;
+    background-color: white;
+    display: none;
+}
+
+.active{
+    display: block;
+}
+
+.card-word{
+    margin-top: 30px;
+    font-size: 70px;
+}
+
+.card-meaning{
+    font-size: 30px;
+    display: none;
+}
+
+
+/* #line1 {
+  width: 100px;
+  height: 20px;
+  margin-left: 150px;
+  z-index: 100;
+} */
+
+.card-pron{
+    opacity: 0.3;
+    font-size: 15px;
+    position: absolute;
+    top: 200px;
+    left: 0;
+    right: 0;
+}
+
+.answer{
+    position: absolute;
+    top: 250px;
+    width: 100%;
+}
+  
+.show-btn-wrap{
+    position: absolute;
+    top: 400px;
+    width: 100%;
+}
+
+
+.show-btn{
+    font-size: 20px;
+    border: solid 2px black;
+    background-color: rgb(195, 246, 255);
+    padding: 10px 25px;
+    display: inline-block;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+.answer-btn{
+    font-size: 40px;
+    font-weight: bold;
+    width: 100px;
+    height: 120px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 20px;
+    background-color: white;
+    cursor: pointer;
+    /* background-color: rgb(251, 234, 189); */
+    /* box-shadow: rgb(255, 187, 0)  3px 3px,black 3px 3px 0 1px ; */
+}
+
+.answer-btn:hover{
+    background-color: rgb(252, 237, 196);
+}
+
+.answer-btn:active{
+    position: relative;
+    top: 4px;
+    left: 4px;
+    box-shadow: none;
+}
+
+.progress{
+    border: solid 2px black;
+    margin-left: 0;
+    width: 20px;
+    display: inline-block;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(176, 237, 255);
+}
+
+.test{
+    display: block;
+    border: solid 1px black;
+    border-radius: 5px;
+    box-shadow: 2px 2px rgb(255, 187, 0);
+    width: 40px;
+    height: 25px;
+    margin-bottom: 10px;
+    margin-left: 3px;
+}
+
+.last-card{
+    padding: 50px 50px;
+}
+
+#progressbar{
+    background-color: aquamarine;
+    color: aqua;
+}
+
+.bar2{
+    width: 400px;
+    background-color: rgb(255, 251, 231);
+}
+
+#bar2{
+    background-color: rgb(255, 207, 111);
+    padding-left: 20px;
+    height: 30px;
+    transition: 0.5;
+}
+
+
+.last-title-k{
+    font-size: 45px;
+}
+
+.last-title{
+    margin-bottom: 30px;
+}    
+
+.bar3-wrap{
+    background-color: rgb(229, 255, 237);
+    line-height: 50px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+#result-bar, #result-bar2{
+    background-color: rgb(165, 238, 187);
+    transition: 0.7s;
+    transform: translate(-100%, 0);
+}
+
+#result-bar.visible, #result-bar2.visible{
+    transform: translate(0, 0);
+
+}
+
+.last-goto{
+    margin-top: 40px;
+    color: black;
+}
+
+.last-goto a{
+    margin-left: 10px;
+    margin-right: 10px;
+    color: black;
+}
+
