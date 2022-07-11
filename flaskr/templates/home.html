@@ -23,20 +23,33 @@
 </div>
 <h2>Section</h2>
 <div>
-    <li class="section box">section1:特に分類なし</li>
-    <li class="section box">section1:日常会話</li>
+    {% for progress in progresses %}
+    <li class="section box" value="{{ progress.section }}">
+        <p>section{{ progress.section }} : 特に分類なし</p>
+        <div class="section-bars">
+            <p>進捗{{ progress.answered }}%</p>
+            <div class="bar-wrap bar-se1-wrap">
+                <div class="bar bar-se1" style="width:{{ progress.answered }}%"></div>
+            </div>
+            <p>暗記{{ progress.answerrate }}%</p>
+            <div class="bar-wrap bar-se2-wrap">
+                <div class="bar bar-se2" style="width:{{ progress.answerrate }}%"></div>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+    <!-- <li class="section box">section1:日常会話</li>
     <li class="section box">section1:台所用品</li>
     <li class="section box">section1:特に分類なし</li>
-    <li class="section box">section1:特に分類なし</li>
+    <li class="section box">section1:特に分類なし</li> -->
 </div>
 
 <div  class="cover"></div>
 <div class="start-modal">
-    <div class="start-modal-wrap">
-        <p class="start-question">はじめますか？</p>
-        <p><a href="/section1/test" class="start box">スタート！</a></p>
-        <p class="start-back">もどる</p>
-    </div>
+    <form method="GET" id="start-section"><input type="hidden" name="section" value="1"></form>
+    <p class="start-question">はじめますか？</p>
+    <p><a href="/section1/" class="start box">スタート！</a></p>
+    <p class="start-back">もどる</p>
 </div>
 
 {% endblock %}

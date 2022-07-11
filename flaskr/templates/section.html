@@ -1,6 +1,29 @@
 {% extends 'base.html' %}
 {% block title %}Tango{% endblock %}
 {% block content %}
+
+<!-- <div>
+    <div class="status box">
+        <p>進歩</p>
+        <div class="bar-wrap bar4-wrap">
+            <div class="bar bar4" style="width:40%">{{ progress }}%</div>
+        </div>
+        <p>section1の{{ progress }}%を学習しました。</p>
+    </div>
+    <div class="status box">
+        <p class="st2-1">定着度（正解率）</p>
+        <div class="bar-wrap bar5-wrap">
+            <div class="bar bar5" style="width:60%">{{ answer_rate }}%</div>
+            <div class="bar bar5-2" style="width:40%">{{ answer_rate }}%</div>
+        </div>
+        <p>section1の<span style="color: rgb(0, 117, 212);">{{ answer_rate }}%</span>を<br>記憶しました。</p>
+        <p class="st2-2">KEEP UP!</p>
+    </div>
+    <div class="start-btn">
+        start
+    </div>
+</div> -->
+
 <div  class="bar-wrap bar2">
     <div id="bar2" class="bar" style="width:0">0</div>
 </div>
@@ -16,7 +39,7 @@
             <input type="hidden" class="id" value="{{ word.id }}" name="id">
             <input type="hidden" class="learning" name="learning">
             <button class="answer-btn btn1 last-btn" value="1">◯</button>
-            <button class="answer-btn btn3" value="2">△</button>
+            <button class="answer-btn btn3" value="3">△</button>
             <button class="answer-btn btn3" value="3">✕</button>
         </form>
         <div class="show-btn-wrap"><p class="show-btn">答えを見る</p></div>
@@ -38,7 +61,7 @@
             <a class="lg1" href="#">recordを見る</a>
             <a class="lg1" href="/">home</a>
             <br>
-            <a class="lg2" href="/section1/test">続ける</a>
+            <a class="lg2">続ける</a>
         </div>
         
     </div>

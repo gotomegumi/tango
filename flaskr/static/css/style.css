@@ -5,7 +5,7 @@
 }
 
 body{
-    font-family: "ヒラギノ角ゴ ProN", 游ゴシック;
+    font-family: Meiryo, "Yu Mincho", "ヒラギノ角ゴ ProN", 游ゴシック;
 }
 
 li{
@@ -28,7 +28,7 @@ header{
     font-size: 35px;
     font-weight: bold;
     margin-left: 40px;
-    color: rgb(231, 151, 38);
+    color: rgb(255, 169, 47);
 }
 
 .nav-bar{

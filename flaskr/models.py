@@ -8,3 +8,8 @@ class Word1(db.Model):
     learning =db.Column(db.String(10))
     section = db.Column(db.String(100))
 
+class Progress(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    answerrate = db.Column(db.String(1000))
+    answered = db.Column(db.String(1000))
+    section = db.Column(db.String(100))

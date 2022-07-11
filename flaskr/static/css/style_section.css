@@ -1,3 +1,28 @@
+.bar4-wrap{
+    background-color: rgb(221, 243, 247);
+}
+
+.bar4{
+    background-color: rgb(126, 216, 238);
+    line-height: 50px;
+}
+
+.bar5-wrap{
+    background-color: rgb(221, 247, 221);
+}
+
+.bar5{
+    background-color: rgb(130, 238, 126);
+    line-height: 50px;
+}
+
+.bar5-2{
+    background-color: rgb(184, 212, 183);
+    line-height: 50px;
+}
+
+
+
 .item_wrap{
     margin-top: 100px;
 }

@@ -20,10 +20,17 @@ def create_app():
     app.register_blueprint(views)
 
     from .models import Word1
+    from .models import Progress
 
     db.create_all(app=app)
 
+
+
+
+
     admin = Admin(app)
     admin.add_view(ModelView(Word1, db.session))
+    admin.add_view(ModelView(Progress, db.session))
+
 
     return app

@@ -30,7 +30,7 @@ $(function(){
     var fn = function(){
         $('.active').find('.card-meaning').show();
     }
-    var tm = 6000;
+    var tm = 8000;
     var id = setTimeout(fn,tm);
 
     remembered_words = 0
@@ -108,9 +108,19 @@ $(function(){
         clearTimeout(id);
     });
 
+    $('.lg2').click(function(){
+        window.location.reload(false);
+    })
+
     $('.section').click(function(){
         $('.start-modal, .cover').show();
-        $('.cover').show()
+        $('.cover').show();
+        var section_num = $(this).val();
+        $('.start').attr('href', '/section/'+section_num);
+    })
+
+    $('.start').click(function(){
+        $('#start-section').submit();
     })
 
     $('.cover, .start-back').click(function(){

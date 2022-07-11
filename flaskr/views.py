@@ -1,36 +1,37 @@
 from random import random
-from flask import Blueprint, render_template, request, jsonify
+from flask import Blueprint, render_template, request, jsonify, redirect
 from sqlalchemy import func
-from .models import Word1
+from .models import Word1, Progress
 from . import db
 
 views = Blueprint('views', __name__, url_prefix='/')
 
+
+
 @views.route('/', methods=['GET'])
 def home():
-    # words = Word1.query.all()
-    # for word in words:
-    #     word.learning = 0
-    # db.session.commit()
     answer = Word1.query.filter_by(learning=1, section=1).count()
-    progress = Word1.query.filter_by(learning=0, section=1).count()
+    answered = Word1.query.filter_by(learning=0, section=1).count()
     total = Word1.query.filter_by(section=1).count()
     answer_rate = round(answer / total * 100)
-    progress = round((1- progress / total) * 100)
-    return render_template('home.html', answer_rate=answer_rate, progress=progress)
+    answered = round((1- answered / total) * 100)
 
-@views.route('/section1/test')
-def test():
+    progresses = Progress.query.all()
+
+    return render_template('home.html', answer_rate=answer_rate, progress=answered, progresses=progresses)
+
+@views.route('/section/<section>')
+def test(section):
     new_count = Word1.query.filter_by(learning=0).count()
     yes_count = Word1.query.filter_by(learning=1).count()
     no_count = Word1.query.filter_by(learning=3).count()
 
     def w0(a):
-        return Word1.query.order_by(func.random()).filter_by(section=1, learning=0).limit(a).all()
+        return Word1.query.order_by(func.random()).filter_by(section=section, learning=0).limit(a).all()
     def w1(b):
-        return Word1.query.order_by(func.random()).filter_by(section=1, learning=1).limit(b).all()
+        return Word1.query.order_by(func.random()).filter_by(section=section, learning=1).limit(b).all()
     def w3(c):
-        return Word1.query.order_by(func.random()).filter_by(section=1, learning=3).limit(c).all()
+        return Word1.query.order_by(func.random()).filter_by(section=section, learning=3).limit(c).all()
 
     if yes_count == 0 and no_count == 0:
         words0 = w0(15)
@@ -78,8 +79,30 @@ def section1_up():
 
 @views.route('/section1/result', methods=['GET'])
 def result():
-    answer = Word1.query.filter_by(learning=1, section=1).count()
+    answer_count = Word1.query.filter_by(learning=1, section=1).count()
+    answered_count = Word1.query.filter_by(learning=0, section=1).count()
     total = Word1.query.filter_by(section=1).count()
-    answer_rate = str(round(answer / total * 100))
-    
+    answer_rate = str(round(answer_count / total * 100))
+    answered = round((1- answered_count / total) * 100)
+
+    progress = Progress.query.filter_by(section=1).first()
+    if progress:
+        progress.answered = answered
+        progress.answerrate = answer_rate
+        db.session.commit()
+    else:
+        first_progress = Progress(answered = answered, answerrate= answer_rate, section = 1)
+        db.session.add(first_progress)
+        db.session.commit()
+
+
     return answer_rate
+
+@views.route('/reset')
+def reset():
+    words = Word1.query.filter_by(section=1).all()
+    for word in words:
+        word.learning = 0
+    db.session.commit()
+
+    return redirect('/')
