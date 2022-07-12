@@ -1,55 +1,84 @@
 {% extends 'base.html' %}
 {% block title %}Tango{% endblock %}
 {% block content %}
-<h2>Status</h2>
-<div class="status-wrap">
-    <div class="status box">
-        <p>進歩</p>
-        <div class="bar-wrap bar1-wrap">
-            <div class="bar bar1" style="width:{{ progress }}%">{{ progress }}%</div>
-        </div>
-        <p>section1の{{ progress }}%を学習しました。</p>
-    </div>
-    <div class="status box">
-        <p class="st2-1">定着度（正解率）</p>
-        <!-- <p>{{ answer_rate }}%</p> -->
-        <div class="bar-wrap bar1-wrap">
-            <div class="bar bar1" style="width:{{ answer_rate }}%">{{ answer_rate }}%</div>
-        </div>
-        <p>section1の<span style="color: rgb(0, 117, 212);">{{ answer_rate }}%</span>を<br>記憶しました。</p>
-        <p class="st2-2">KEEP UP!</p>
-    </div>
-    <div class="status box">Daily</div>
-</div>
-<h2>Section</h2>
-<div>
-    {% for progress in progresses %}
-    <li class="section box" value="{{ progress.section }}">
-        <p>section{{ progress.section }} : 特に分類なし</p>
-        <div class="section-bars">
-            <p>進捗{{ progress.answered }}%</p>
-            <div class="bar-wrap bar-se1-wrap">
-                <div class="bar bar-se1" style="width:{{ progress.answered }}%"></div>
+<div class="home">
+    <h2>Status</h2>
+    <ul class="status-wrap">
+        <li class="status box light-theme">
+            <p>進歩</p>
+            <div class="bar-wrap bar1-wrap">
+                <div class="bar bar1" style="width:{{ progress }}%">{{ progress }}%</div>
             </div>
-            <p>暗記{{ progress.answerrate }}%</p>
-            <div class="bar-wrap bar-se2-wrap">
-                <div class="bar bar-se2" style="width:{{ progress.answerrate }}%"></div>
+            <p>section1の{{ progress }}%を学習しました。</p>
+        </li>
+        <li class="status box light-theme">
+            <p class="st-text1">定着度（正解率）</p>
+            <!-- <p>{{ answer_rate }}%</p> -->
+            <div class="bar-wrap bar1-wrap">
+                <div class="bar bar1" style="width:{{ answer_rate }}%">{{ answer_rate }}%</div>
             </div>
-        </div>
-    </li>
-    {% endfor %}
-    <!-- <li class="section box">section1:日常会話</li>
-    <li class="section box">section1:台所用品</li>
-    <li class="section box">section1:特に分類なし</li>
-    <li class="section box">section1:特に分類なし</li> -->
+            <p>section1の<span style="color: rgb(0, 117, 212);">{{ answer_rate }}%</span>を<br>記憶しました。</p>
+            <p class="st-text2">KEEP UP!</p>
+        </li>
+        <li class="status box light-theme"></li>
+    </ul>
+    <h2>Section</h2>
+    <div>
+        {% for progress in progresses %}
+        <li class="section box light-theme" value="{{ progress.section }}">
+            <p>section{{ progress.section }} : 特に分類なし</p>
+            <div class="section-bars">
+                <p>進捗</p>
+                <p class="prg-percent">{{ progress.answered }}%</p>
+                <div class="bar-wrap bar-se1-wrap">
+                    <div class="bar bar-se1" style="width:{{ progress.answered }}%"></div>
+                </div>
+                <p>暗記</p>
+                <p class="ar-percent">{{ progress.answerrate }}%</p>
+                <div class="bar-wrap bar-se2-wrap">
+                    <div class="bar bar-se2" style="width:{{ progress.answerrate }}%"></div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </div>
 </div>
 
-<div  class="cover"></div>
-<div class="start-modal">
+<div class="start-menu">
+    <div>
+        <h2>Home>Section1</h2>
+    </div>
+    <div class="start-status-wrap">
+        <div class="start-status box light-theme">
+            <p>進歩</p>
+            <div class="bar-wrap prg-bar4-wrap">
+                <div class="bar prg-bar4"></div>
+            </div>
+            <p><span id="prg-text" style="color: rgb(0, 117, 212);"></span>を学習しました。</p>
+            <p class="st1-2">KEEP UP!</p>
+        </div>
+        <div class="start-status box light-theme">
+            <p class="st2-1">正解率</p>
+            <div class="bar-wrap ar-bar4-wrap">
+                <div class="bar ar-bar4"></div>
+            </div>
+            <p><span id="ar-text" style="color: rgb(0, 117, 212);"></span>を記憶しました。</p>
+            <p class="st2-2">KEEP UP!</p>
+        </div>
+    </div> 
+    <div class="start-btn box light-theme">
+        <a href="#">시작하다</a> 
+    </div>
+    <div class="mistake-btn box light-theme">
+        <a href="#">間違えた単語</a> 
+    </div>
+    
+</div>
+<!-- <div class="start-modal">
     <form method="GET" id="start-section"><input type="hidden" name="section" value="1"></form>
     <p class="start-question">はじめますか？</p>
     <p><a href="/section1/" class="start box">スタート！</a></p>
     <p class="start-back">もどる</p>
 </div>
-
+ -->
 {% endblock %}

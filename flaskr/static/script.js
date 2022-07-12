@@ -37,9 +37,8 @@ $(function(){
     done_words = 0
     var total = $('.card-wrap').length -1;
 
-    function prg(done_words, total){
-        $('#bar2').attr('style', 'width:'+done_words/total*100+'%').text(done_words);
-    }    
+    $('#result-bar2').text('0/'+total)
+
 
 
     $('.answer-btn').click(function(){
@@ -53,7 +52,7 @@ $(function(){
         id = setTimeout(fn, tm );
         // $('#line').first().attr('id', 'line1')
         done_words++;
-        $('#bar2').attr('style', 'width:'+done_words/total*100+'%').text(done_words);
+        $('#indicater').attr('style', 'width:'+done_words/total*100+'%').text(done_words);
         // var bar = new ProgressBar.Line(line1, {
         //     strokeWidth: 6,
         //     duration: 6000,
@@ -65,8 +64,9 @@ $(function(){
           
         // bar.animate(1.0); 
         if ($('.last-card').is(':visible')){
+            var section = $('#section-num').val()
             $.ajax({
-                url:'/section1/result',
+                url:'/section/result'+section,
                 type:'GET',
             })
             .done(function(data){
@@ -82,6 +82,13 @@ $(function(){
     
     });
 
+
+    
+    // function prg(done_words, total){
+    //     $('#bar2').attr('style', 'width:'+done_words/total*100+'%').text(done_words);
+    // }    
+
+
     $('.btn1').click(function(){
         remembered_words++;
         $('#result-bar2').attr('style', 'width:'+remembered_words/total*100+'%').text(remembered_words+'/'+total)
@@ -94,7 +101,7 @@ $(function(){
     $('.answer').submit(function(e){
         e.preventDefault();
         $.ajax({
-            url:'/section1/up',
+            url:'/section/up',
             type:'POST',
             data:{
                 id:$(this).find('.id').val(),
@@ -113,10 +120,23 @@ $(function(){
     })
 
     $('.section').click(function(){
-        $('.start-modal, .cover').show();
-        $('.cover').show();
+        var prg = $(this).find('.section-bars').find('.prg-percent').html();
+        var ar = $(this).find('.section-bars').find('.ar-percent').html();
+        $('.prg-bar4').attr('style', "width:"+prg).html(prg);
+        $('#prg-text').html(prg);
+        $('.ar-bar4').attr('style', 'width:'+ar).html(ar);
+        $('#ar-text').html(ar);
+
+        $('.start-menu').show();
+        $('.home').hide();
+        if (prg == '100%'){
+            $('.st1-2').text('CONGLATULTION!');
+            $('.st1-2').css('color', 'blue');
+
+        };
         var section_num = $(this).val();
-        $('.start').attr('href', '/section/'+section_num);
+        $('.start-btn').find('a').attr('href', '/section/'+section_num);        
+        $('.mistake-btn').find('a').attr('href', '/section/mistake/'+section_num);
     })
 
     $('.start').click(function(){
@@ -125,10 +145,22 @@ $(function(){
 
     $('.cover, .start-back').click(function(){
         $('.start-modal, .cover').hide();
+        $('.home').show();
     })
 
     $('#progressbar').progressbar({
         value:50
+    });
+
+    $('#btn-mode').change(function(){
+        if($('#btn-mode').is(':checked')){
+            $('.light-theme').addClass('dark-theme');
+            $('.light-theme').removeClass('light-theme');
+        }else{
+            $('.dark-theme').addClass('light-theme');
+            $('.dark-theme').removeClass('dark-theme');
+        };
+        
     });
 
 }); 

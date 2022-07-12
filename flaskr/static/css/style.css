@@ -13,7 +13,8 @@ li{
 }
 
 header{
-    background-color: rgb(255, 207, 139);
+    background-color: rgb(255, 243, 224);
+    border-bottom: solid 2px black;
     display: flex;
     justify-content: space-between;
     line-height: 100px;
@@ -41,7 +42,30 @@ header{
     margin-right: 40px;
 }
 
+.nav-btn{
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 60px;
+    border-radius: 30px;
+    border: solid 2px black;
+    height: 60px;
+    background-color: white;
+    box-shadow: 3px 3px orange, 3px 3px 0 1px black;
+    display: none;
+}
+
 .content-wrap{
     margin: 120px auto;
-    max-width: 700px;    
+    max-width: 650px;    
+}
+
+.light-theme{
+    background-color: rgb(255, 255, 255);
+}
+
+
+@media screen and (max-width:600px){
+    .nav-btn{
+        display: block;
+    }
 }

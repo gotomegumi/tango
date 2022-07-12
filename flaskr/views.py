@@ -20,11 +20,11 @@ def home():
 
     return render_template('home.html', answer_rate=answer_rate, progress=answered, progresses=progresses)
 
-@views.route('/section/<section>')
+@views.route('/section/<int:section>')
 def test(section):
-    new_count = Word1.query.filter_by(learning=0).count()
-    yes_count = Word1.query.filter_by(learning=1).count()
-    no_count = Word1.query.filter_by(learning=3).count()
+    new_count = Word1.query.filter_by(learning=0, section=section).count()
+    yes_count = Word1.query.filter_by(learning=1, section=section).count()
+    no_count = Word1.query.filter_by(learning=3, section=section).count()
 
     def w0(a):
         return Word1.query.order_by(func.random()).filter_by(section=section, learning=0).limit(a).all()
@@ -65,9 +65,9 @@ def test(section):
             words1 = w1(7)
             words3 = w3(0)
 
-    return render_template('section.html', words=words1 + words3 + words0)
+    return render_template('section.html', words=words1 + words3 + words0, section=section)
 
-@views.route('/section1/up', methods=['POST'])    
+@views.route('/section/up', methods=['POST'])    
 def section1_up():
     word_id = request.form.get('id')
     learning = request.form.get('learning')
@@ -77,21 +77,21 @@ def section1_up():
     db.session.commit()
     return render_template('section.html')
 
-@views.route('/section1/result', methods=['GET'])
-def result():
-    answer_count = Word1.query.filter_by(learning=1, section=1).count()
-    answered_count = Word1.query.filter_by(learning=0, section=1).count()
-    total = Word1.query.filter_by(section=1).count()
+@views.route('/section/result<int:section>', methods=['GET'])
+def result(section):
+    answer_count = Word1.query.filter_by(learning=1, section=section).count()
+    answered_count = Word1.query.filter_by(learning=0, section=section).count()
+    total = Word1.query.filter_by(section=section).count()
     answer_rate = str(round(answer_count / total * 100))
     answered = round((1- answered_count / total) * 100)
 
-    progress = Progress.query.filter_by(section=1).first()
+    progress = Progress.query.filter_by(section=section).first()
     if progress:
         progress.answered = answered
         progress.answerrate = answer_rate
         db.session.commit()
     else:
-        first_progress = Progress(answered = answered, answerrate= answer_rate, section = 1)
+        first_progress = Progress(answered = answered, answerrate = answer_rate, section = section)
         db.session.add(first_progress)
         db.session.commit()
 
