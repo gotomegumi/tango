@@ -1,5 +1,27 @@
 header.dark-theme{
-    background-color: rgb(37, 35, 33);
+    background-color: rgb(40, 97, 123);
+}
+
+header.light-theme{
+    background-color: rgb(188, 224, 255);
+}
+
+label.dark-theme{
+    border: solid 2px rgb(182, 182, 182);
+    background-color: rgb(15, 15, 15);
+}
+
+label.dark-theme .darkmode-icon{
+    color: white;
+    border-color: white;
+    box-shadow: -8px 0 0 -3px white,  8px 0 0 -3px white,  0 -8px 0 -3px white,  0 8px 0 -3px white,  -6px -6px 0 -3px white,  -6px 6px 0 -3px white,  6px -6px 0 -3px white,  6px 6px 0 -3px white;
+    right: 33px;
+}
+
+label.dark-theme .slider{
+    left: 30px;
+    border: solid 2px rgb(182, 182, 182);
+    background-color: rgb(20, 20, 20);
 }
 
 /* .dark-theme{
@@ -8,22 +30,63 @@ header.dark-theme{
 } */
 
 .box.dark-theme{
-    background-color: rgb(31, 33, 42);
-    border: solid 2px rgb(144, 144, 144);
+    background-color: rgb(37, 40, 45);
 }
 
-.section.dark-theme{    
+.status.dark-theme{
+    border: solid 2px rgb(136, 186, 219);
+    box-shadow: rgb(139, 190, 224) 3px 3px;
 }
 
-.start-btn.dark-theme{
-    border: solid 2px grey;
+.bar.dark-theme{
+    color: black;
 }
 
-.start-btn.dark-theme a{
+.section.dark-theme{   
+    box-shadow: rgb(223, 163, 0) 4px 4px;
+    border: solid 2px rgb(232, 170, 0);
+}
+
+.box.dark-theme:active{
+    box-shadow: none;
+}
+
+.start-status.dark-theme{
+    border: solid 3px rgb(136, 186, 219);
+    box-shadow: none;
+}
+
+.box.dark-theme a{
     color: white;
 }
 
+.start-btn.dark-theme{
+    box-shadow: 4px 4px rgb(236, 113, 113);
+    border: solid 2px rgb(232, 107, 107);
+}
+
+.mistake-btn.dark-theme{
+    box-shadow: 4px 4px rgb(228, 137, 95);
+    border: solid 2px rgb(240, 145, 101);
+}
+
 body.dark-theme{
-    background-color: rgb(21, 21, 21);
-    color: rgb(197, 197, 197);
+    background-color: rgb(24, 26, 27);
+    color: var(--dark-color);
+}
+
+.card-wrap.dark-theme{
+    background-color: rgb(33, 33, 33);
+    border: 3px solid rgb(205, 150, 0);
+    box-shadow: rgb(205, 150, 0) 10px 10px;
+}
+
+.answer-btn.dark-theme{
+    background-color: rgb(31, 31, 31);
+    border: 3px solid rgb(205, 150, 0);
+    color: white;
+}
+
+.show-btn.dark-theme{
+    color: black;
 }

@@ -1,17 +1,30 @@
 $(function(){
-    // $('#line').first().attr('id',  'line1')
-   
-    // var bar = new ProgressBar.Line(line1, {
-    //     strokeWidth: 6,
-    //     duration: 6000,
-    //     color: '#FFEA82',
-    //     trailColor: '#eee',
-    //     trailWidth: 1,
-    //     svgStyle: null
-    // });
-      
-    // bar.animate(1.0); 
+    $('.section').click(function(){
+        var prg = $(this).find('.section-bars').find('.prg-percent').html();
+        var ar = $(this).find('.section-bars').find('.ar-percent').html();
+        $('.prg-bar4').attr('style', "width:"+prg).html(prg);
+        $('#prg-text').html(prg);
+        $('.ar-bar4').attr('style', 'width:'+ar).html(ar);
+        $('#ar-text').html(ar);
 
+        $('.start-menu').fadeIn();
+        $('.home').hide();
+        if (prg == '100%'){
+            $('.st1-2').text('CONGLAT!');
+            $('.st1-2').css('color', 'rgb(67, 136, 255)');
+        };
+        var section_num = $(this).val();
+        $('.start-btn').find('a').attr('href', '/section/'+section_num);        
+        $('.mistake-btn').find('a').attr('href', '/section/mistake/'+section_num);
+    })
+
+    $('.start-hide').click(function(){
+        $('.start-menu').hide();
+        $('.home').show();
+    })
+
+
+    // shuffle cards
     function shuffleContent(container) {
         var content = container.find("> *");
         var total = content.length - 1;
@@ -26,7 +39,6 @@ $(function(){
         $('.card-wrap').eq(0).addClass('active');
     });
 
-
     var fn = function(){
         $('.active').find('.card-meaning').show();
     }
@@ -39,6 +51,10 @@ $(function(){
 
     $('#result-bar2').text('0/'+total)
 
+    $('.show-btn').click(function(){
+        $(this).parents('.card-wrap').find('.card-meaning').css('display', 'block');
+        clearTimeout(id);
+    });
 
 
     $('.answer-btn').click(function(){
@@ -50,19 +66,8 @@ $(function(){
         $displaycard.removeClass('active');
         $displaycard.next().addClass('active');
         id = setTimeout(fn, tm );
-        // $('#line').first().attr('id', 'line1')
         done_words++;
         $('#indicater').attr('style', 'width:'+done_words/total*100+'%').text(done_words);
-        // var bar = new ProgressBar.Line(line1, {
-        //     strokeWidth: 6,
-        //     duration: 6000,
-        //     color: '#FFEA82',
-        //     trailColor: '#eee',
-        //     trailWidth: 1,
-        //     svgStyle: null
-        // });
-          
-        // bar.animate(1.0); 
         if ($('.last-card').is(':visible')){
             var section = $('#section-num').val()
             $.ajax({
@@ -82,21 +87,10 @@ $(function(){
     
     });
 
-
-    
-    // function prg(done_words, total){
-    //     $('#bar2').attr('style', 'width:'+done_words/total*100+'%').text(done_words);
-    // }    
-
-
     $('.btn1').click(function(){
         remembered_words++;
         $('#result-bar2').attr('style', 'width:'+remembered_words/total*100+'%').text(remembered_words+'/'+total)
     })
-
-    // $('.btn3').click(function(){
-    //     $(this).parents('.card-wrap').next().css('background-color', 'rgb(255, 217, 242)');
-    // })
 
     $('.answer').submit(function(e){
         e.preventDefault();
@@ -110,34 +104,11 @@ $(function(){
         });
     }); 
 
-    $('.show-btn').click(function(){
-        $(this).parents('.card-wrap').find('.card-meaning').css('display', 'block');
-        clearTimeout(id);
-    });
 
     $('.lg2').click(function(){
         window.location.reload(false);
     })
 
-    $('.section').click(function(){
-        var prg = $(this).find('.section-bars').find('.prg-percent').html();
-        var ar = $(this).find('.section-bars').find('.ar-percent').html();
-        $('.prg-bar4').attr('style', "width:"+prg).html(prg);
-        $('#prg-text').html(prg);
-        $('.ar-bar4').attr('style', 'width:'+ar).html(ar);
-        $('#ar-text').html(ar);
-
-        $('.start-menu').show();
-        $('.home').hide();
-        if (prg == '100%'){
-            $('.st1-2').text('CONGLATULTION!');
-            $('.st1-2').css('color', 'blue');
-
-        };
-        var section_num = $(this).val();
-        $('.start-btn').find('a').attr('href', '/section/'+section_num);        
-        $('.mistake-btn').find('a').attr('href', '/section/mistake/'+section_num);
-    })
 
     $('.start').click(function(){
         $('#start-section').submit();
@@ -152,11 +123,19 @@ $(function(){
         value:50
     });
 
+    var dark = $.cookie('dark-mode');
+    if(dark){
+        $('.light-theme').addClass('dark-theme');
+        $('.light-theme').removeClass('light-theme');
+        $('#btn-mode').prop('checked', true);
+    }
     $('#btn-mode').change(function(){
         if($('#btn-mode').is(':checked')){
+            $.cookie("dark-mode", 1);
             $('.light-theme').addClass('dark-theme');
             $('.light-theme').removeClass('light-theme');
         }else{
+            $.removeCookie("dark-mode");
             $('.dark-theme').addClass('light-theme');
             $('.dark-theme').removeClass('dark-theme');
         };

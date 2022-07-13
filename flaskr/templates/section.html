@@ -6,8 +6,8 @@
 </div>
 <div class="item_wrapper">
     {% for word in words %}
-    <div class="card-wrap" value="{{ word.learning }}" >
-
+    <div class="card-wrap light-theme value="{{ word.learning }}" >
+        <p class="card-sec-num">section{{ section }}</p>
         <p class="card-word">{{ word.korean }}</p>
         <div></div>
         <p class="card-meaning">{{ word.meaning }}</p>
@@ -15,14 +15,14 @@
         <form class="answer" type="POST" action="/section/up">
             <input type="hidden" class="id" value="{{ word.id }}" name="id">
             <input type="hidden" class="learning" name="learning">
-            <button class="answer-btn btn1 last-btn" value="1">◯</button>
-            <button class="answer-btn btn3" value="3">△</button>
-            <button class="answer-btn btn3" value="3">✕</button>
+            <button class="answer-btn light-theme btn1 last-btn" value="1">◯</button>
+            <button class="answer-btn light-theme btn3" value="3">△</button>
+            <button class="answer-btn light-theme btn3" value="3">✕</button>
         </form>
-        <div class="show-btn-wrap"><p class="show-btn">答えを見る</p></div>
+        <div class="show-btn-wrap"><p class="show-btn light-theme">答えを見る</p></div>
     </div>
     {% endfor %}
-    <div class="card-wrap last-card">
+    <div class="card-wrap light-theme last-card">
         <form action="" method=""><input id="section-num" type="hidden" value="{{ section }}" name="section"></form>
         <h2 class="last-title-k">완료!</h2>
         <p class="last-title">完了！</p>
