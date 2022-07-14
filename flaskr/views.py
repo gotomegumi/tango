@@ -100,7 +100,7 @@ def result(section):
 
 @views.route('/reset')
 def reset():
-    words = Word1.query.filter_by(section=1).all()
+    words = Word1.query.filter_by(section=2).all()
     for word in words:
         word.learning = 0
     db.session.commit()
