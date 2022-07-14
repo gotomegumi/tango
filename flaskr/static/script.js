@@ -2,16 +2,20 @@ $(function(){
     $('.section').click(function(){
         var prg = $(this).find('.section-bars').find('.prg-percent').html();
         var ar = $(this).find('.section-bars').find('.ar-percent').html();
-        $('.prg-bar4').attr('style', "width:"+prg).html(prg);
-        $('#prg-text').html(prg);
-        $('.ar-bar4').attr('style', 'width:'+ar).html(ar);
-        $('#ar-text').html(ar);
+        $('.prg-bar4').attr('style', "width:"+prg);
+        $('.st1-2').html(prg);
+        $('.ar-bar4').attr('style', 'width:'+ar);
+        $('.st2-2').html(ar);
 
         $('.start-menu').fadeIn();
         $('.home').hide();
         if (prg == '100%'){
-            $('.st1-2').text('CONGLAT!');
-            $('.st1-2').css('color', 'rgb(67, 136, 255)');
+            $('.st1-3').text('CONGLAT!');
+            $('.st1-3').css('color', 'rgb(67, 136, 255)');
+        };
+        if (ar == '100%'){
+            $('.st1-3').text('CONGLAT!');
+            $('.st1-3').css('color', 'rgb(67, 136, 255)');
         };
         var section_num = $(this).val();
         $('.start-btn').find('a').attr('href', '/section/'+section_num);        

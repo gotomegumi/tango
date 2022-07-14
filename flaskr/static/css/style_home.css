@@ -58,12 +58,74 @@
     width: 600px;
     height: 70px;
     margin-bottom: 30px;
-    box-shadow: rgb(255, 187, 0) 6px 6px, black 6px 6px 0 2px;
+    box-shadow: rgb(255, 216, 109) 6px 6px, black 6px 6px 0 2px;
     border: solid 2px black;
     font-size: large;
     cursor: pointer;
     padding: 10px 20px;
 }
+
+.section:hover{
+    background-color: rgb(255, 252, 244);
+}
+
+.section:nth-child(2){
+    box-shadow: 5px 5px rgb(255, 133, 127), 5px 5px 0 2px black;
+}
+
+.section:nth-child(2):hover{
+    background-color: rgb(255, 230, 229);
+}
+
+.section:nth-child(3){
+    box-shadow: 5px 5px rgb(193, 255, 170), 5px 5px 0 2px black;
+}
+
+.section:nth-child(3):hover{
+    background-color: rgb(237, 255, 230);
+}
+
+.section:nth-child(4){
+    box-shadow: 5px 5px rgb(127, 236, 255), 5px 5px 0 2px black;
+}
+
+.section:nth-child(4):hover{
+    background-color: rgb(232, 252, 255);
+}
+
+.section:nth-child(5){
+    box-shadow: 5px 5px rgb(221, 127, 255), 5px 5px 0 2px black;
+}
+
+.section:nth-child(5):hover{
+    background-color: rgb(249, 232, 255);
+}
+
+.section:nth-child(6){
+    box-shadow: 5px 5px rgb(255, 127, 127), 5px 5px 0 2px black;
+}
+
+.section:nth-child(6):hover{
+    background-color: rgb(255, 234, 234);
+}
+
+.section:nth-child(7){
+    box-shadow: 5px 5px rgb(127, 255, 255), 5px 5px 0 2px black;
+}
+
+.section:nth-child(7):hover{
+    background-color: rgb(230, 255, 255);
+}
+
+.section:nth-child(8){
+    box-shadow: 5px 5px aquamarine, 5px 5px 0 2px black;
+}
+
+.section:nth-child(8):hover{
+    background-color: aquamarine;
+}
+
+
 
 .section-bars{
     display: flex;
@@ -150,31 +212,72 @@
 .start-status{
     height: 220px;
     border-radius: 15px;
-    border: solid 3px black;
-    box-shadow: 7px 7px rgb(174, 237, 255), 7px 7px 0 3px black;
     padding: 20px 10px 0 10px;
     margin-bottom: 20px;
     text-align: center;
     width: 230px;
 }
 
+.st2{
+    background-color: rgb(244, 142, 119);
+}
+
+.st1{
+    border: 2px solid black;
+}
+
 .start-status:first-child{
     margin-right: 30px;
 }
 
-.start-status p{
+.st1-1{
     font-size: 20px;
-    margin-bottom: 0;
+    font-weight: bold;
 }
 
 .st1-2{
+    font-size: 40px;
+}
+
+.st1-3{
     font-weight: bold;
 }
 
-.st2-2{
-    color: rgb(226, 105, 84);
+.st2-1{
+    font-size: 20px;
     font-weight: bold;
+    color: rgb(237, 251, 255);
 }
+
+.st2-2{
+    font-size: 40px;
+    color: rgb(239, 247, 252);
+}
+
+.st2-3{
+    color: rgb(255, 205, 196);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.prg-bar4-wrap{
+    background-color: rgb(221, 243, 247);
+}
+
+.prg-bar4{
+    background-color: rgb(126, 216, 238);
+    height: 20px;
+}
+
+.ar-bar4-wrap{
+    background-color: rgb(221, 247, 221);
+}
+
+.ar-bar4{
+    background-color: rgb(140, 224, 137);
+    height: 20px;
+}
+
 
 .start-btn{
     height: 70px;
@@ -226,23 +329,6 @@
     display: block;
 }
 
-.prg-bar4-wrap{
-    background-color: rgb(221, 243, 247);
-}
-
-.prg-bar4{
-    background-color: rgb(126, 216, 238);
-    line-height: 60px;
-}
-
-.ar-bar4-wrap{
-    background-color: rgb(221, 247, 221);
-}
-
-.ar-bar4{
-    background-color: rgb(140, 224, 137);
-    line-height: 60px;
-}
 
 
 @media screen and (max-width:600px){
@@ -272,7 +358,10 @@
 
     .section{
         width: 100%;
+        height: 80px;
+
     }
+
 
     .start-status{
         max-width: 180px;
