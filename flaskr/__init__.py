@@ -14,7 +14,6 @@ def create_app():
     migrate = Migrate(app, db)
     db.init_app(app)
 
-    db_uri = os.environ.get('DATABASE_URL') or "postgresql://localhost/flaskr"
 
 
     from .views import views
