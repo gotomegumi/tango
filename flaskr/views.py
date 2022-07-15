@@ -10,9 +10,9 @@ views = Blueprint('views', __name__, url_prefix='/')
 
 @views.route('/', methods=['GET'])
 def home():
-    answer = Word1.query.filter_by(learning=1, section=1).count()
-    answered = Word1.query.filter_by(learning=0, section=1).count()
-    total = Word1.query.filter_by(section=1).count()
+    answer = db.session.query(Word1).filter_by(learning='1', section='1').count()
+    answered = Word1.query.filter_by(learning='0', section='1').count()
+    total = Word1.query.filter_by(section='1').count()
     answer_rate = round(answer / total * 100)
     answered = round((1- answered / total) * 100)
 
@@ -20,18 +20,19 @@ def home():
 
     return render_template('home.html', answer_rate=answer_rate, progress=answered, progresses=progresses)
 
-@views.route('/section/<int:section>')
-def test(section):
-    new_count = Word1.query.filter_by(learning=0, section=section).count()
-    yes_count = Word1.query.filter_by(learning=1, section=section).count()
-    no_count = Word1.query.filter_by(learning=3, section=section).count()
+@views.route('/section/<int:section1>')
+def test(section1):
+    section = str(section1)
+    new_count = Word1.query.filter_by(learning='0', section=section).count()
+    yes_count = Word1.query.filter_by(learning='1', section=section).count()
+    no_count = Word1.query.filter_by(learning='3', section=section).count()
 
     def w0(a):
-        return Word1.query.order_by(func.random()).filter_by(section=section, learning=0).limit(a).all()
+        return Word1.query.order_by(func.random()).filter_by(section=section, learning='0').limit(a).all()
     def w1(b):
-        return Word1.query.order_by(func.random()).filter_by(section=section, learning=1).limit(b).all()
+        return Word1.query.order_by(func.random()).filter_by(section=section, learning='1').limit(b).all()
     def w3(c):
-        return Word1.query.order_by(func.random()).filter_by(section=section, learning=3).limit(c).all()
+        return Word1.query.order_by(func.random()).filter_by(section=section, learning='3').limit(c).all()
 
     if yes_count == 0 and no_count == 0:
         words0 = w0(15)
@@ -79,8 +80,9 @@ def section1_up():
 
 @views.route('/section/result<int:section>', methods=['GET'])
 def result(section):
-    answer_count = Word1.query.filter_by(learning=1, section=section).count()
-    answered_count = Word1.query.filter_by(learning=0, section=section).count()
+    section=str(section)
+    answer_count = Word1.query.filter_by(learning='1', section=section).count()
+    answered_count = Word1.query.filter_by(learning='0', section=section).count()
     total = Word1.query.filter_by(section=section).count()
     answer_rate = str(round(answer_count / total * 100))
     answered = round((1- answered_count / total) * 100)
@@ -100,7 +102,7 @@ def result(section):
 
 @views.route('/reset')
 def reset():
-    words = Word1.query.filter_by(section=2).all()
+    words = Word1.query.filter_by(section='1').all()
     for word in words:
         word.learning = 0
     db.session.commit()

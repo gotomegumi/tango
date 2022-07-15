@@ -10,7 +10,7 @@ db = SQLAlchemy()
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'dsafhisdf'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tango.db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL') or 'postgresql://postgres:4869@localhost:5432/tango1'
     migrate = Migrate(app, db)
     db.init_app(app)
 
@@ -23,7 +23,7 @@ def create_app():
     from .models import Word1
     from .models import Progress
 
-    db.create_all(app=app)
+    # db.create_all(app=app)
 
 
 
