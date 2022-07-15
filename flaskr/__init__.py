@@ -5,13 +5,16 @@ from flask_migrate import Migrate
 from flask_admin.contrib.sqla import ModelView
 from os import path
 import os
+import psycopg2
 
 db = SQLAlchemy()
 
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'dsafhisdf'
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL') or  'postgresql://postgres:4869@localhost:5432/tango1'
+    # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL') or  'postgresql://postgres:4869@localhost:5432/tango1'
+    DATABASE_URL = os.environ['DATABASE_URL']
+    conn = psycopg2.connect(DATABASE_URL, sslmode='require')
     migrate = Migrate(app, db)
     db.init_app(app)
 
