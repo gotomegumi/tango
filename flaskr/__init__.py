@@ -4,6 +4,7 @@ from flask_admin import Admin
 from flask_migrate import Migrate
 from flask_admin.contrib.sqla import ModelView
 from os import path
+import os
 
 db = SQLAlchemy()
 
@@ -23,7 +24,7 @@ def create_app():
     from .models import Word1
     from .models import Progress
 
-    # db.create_all(app=app)
+    db.create_all(app=app)
 
 
 
