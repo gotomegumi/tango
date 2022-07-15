@@ -108,3 +108,12 @@ def reset():
     db.session.commit()
 
     return redirect('/')
+
+@views.route('/f')
+def f():
+    word=Word1(meaning='赤い', korean='붉다', pronounce='プッタ', learning=0, section=2)
+    db.session.add(word)
+    prg = Progress(section=1, answerrate=10, answered=10)
+    db.session.add(prg)
+    db.session.commit()
+    return 'yew!'
