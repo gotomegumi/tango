@@ -57,13 +57,13 @@ label.dark-theme .slider{
 }
 
 .section.dark-theme:nth-child(2){
-    border: solid 2px rgb(228, 104, 104);
-    box-shadow: 4px 4px rgb(231, 96, 89);
+    border: solid 2px rgb(238, 125, 125);
+    box-shadow: 4px 4px rgb(232, 140, 135);
 }
 
 .section.dark-theme:nth-child(3){
-    border: solid 2px rgb(151, 240, 138);
-    box-shadow: 5px 5px rgb(165, 239, 139);
+    border: solid 2px rgb(238, 250, 255);
+    box-shadow: 5px 5px rgb(241, 250, 255);
 }
 
 .section.dark-theme:nth-child(4){
@@ -98,17 +98,17 @@ label.dark-theme .slider{
 
 .section.dark-theme:nth-child(10){
     border: solid 2px rgb(240, 167, 138);
-    box-shadow: 5px 5px rgb(165, 239, 139);
+    box-shadow: 5px 5px rgb(239, 162, 139);
 }
 
 .section.dark-theme:nth-child(11){
     border: solid 2px rgb(151, 240, 138);
-    box-shadow: 5px 5px rgb(239, 176, 139);
+    box-shadow: 5px 5px rgb(144, 239, 139);
 }
 
 .section.dark-theme:nth-child(12){
-    border: solid 2px rgb(209, 241, 246);
-    box-shadow: 5px 5px rgb(203, 237, 237);
+    border: solid 2px rgb(246, 209, 224);
+    box-shadow: 5px 5px rgb(237, 203, 219);
 }
 
 
@@ -117,7 +117,7 @@ label.dark-theme .slider{
 }
 
 .bar-se2-wrap.dark-theme{
-    background-color: rgb(221, 255, 229);
+    background-color: rgb(238, 255, 242);
 }
 
 

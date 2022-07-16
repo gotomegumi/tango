@@ -17,7 +17,7 @@ def home():
     answer_rate = round(answer / total * 100)
     answered = round((1- answered / total) * 100)
 
-    progresses = Progress.query.order_by(Progress.section).all()
+    progresses = Progress.query.order_by(Progress.id).all()
 
     return render_template('home.html', answer_rate=answer_rate, progress=answered, progresses=progresses)
 
@@ -92,7 +92,7 @@ def section1_up():
 
     word.learning = learning
     db.session.commit()
-    return render_template('section.html')
+    return render_template('section.html') 
 
 @views.route('/section/result<int:section>', methods=['GET'])
 def result(section):
@@ -116,9 +116,10 @@ def result(section):
 
     return answer_rate
 
-@views.route('/reset')
-def reset():
-    words = Word1.query.filter_by(section=1).all()
+@views.route('/reset/<int:section>')
+def reset(section):
+    section=str(section)
+    words = Word1.query.filter_by(section=section).all()
     for word in words:
         word.learning = 0
     db.session.commit()
