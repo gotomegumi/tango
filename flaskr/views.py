@@ -3,6 +3,7 @@ from flask import Blueprint, render_template, request, jsonify, redirect
 from sqlalchemy import func
 from .models import Word1, Progress
 from . import db
+from sqlalchemy import desc
 
 views = Blueprint('views', __name__, url_prefix='/')
 
@@ -16,7 +17,7 @@ def home():
     answer_rate = round(answer / total * 100)
     answered = round((1- answered / total) * 100)
 
-    progresses = Progress.query.all()
+    progresses = Progress.query.order_by(Progress.section).all()
 
     return render_template('home.html', answer_rate=answer_rate, progress=answered, progresses=progresses)
 
@@ -33,20 +34,28 @@ def test(section1):
         return Word1.query.order_by(func.random()).filter_by(section=section, learning='1').limit(b).all()
     def w3(c):
         return Word1.query.order_by(func.random()).filter_by(section=section, learning='3').limit(c).all()
-
+    #最初
     if yes_count == 0 and no_count == 0:
         words0 = w0(15)
         words1 = w1(0)
         words3 = w3(0)
+    #すべての単語に目を通した
     elif new_count == 0:
-        if no_count <12:
-            words0 = w0(0)
-            words1 = w1(15-no_count)
-            words3 = w3(no_count)
+        if yes_count >= 40:
+            if no_count <12:
+                words0 = w0(0)
+                words1 = w1(15-no_count)
+                words3 = w3(no_count)
+            else:
+                words0 = w0(0)
+                words1 = w1(2) #3
+                words3 = w3(13) #12
+        #ほとんど覚えてない
         else:
             words0 = w0(0)
-            words1 = w1(3) #3
-            words3 = w3(12) #12
+            words1 = w1(0)
+            words3 = w3(15)
+    #もうすぐですべての単語を周回
     elif new_count < 8:
         if no_count < 8 - new_count + 7:
             words0 = w0(new_count)
@@ -55,18 +64,25 @@ def test(section1):
         else:
             words0 = w0(new_count)
             words1 = w1(0)
-            words3 = w3(15-new_count)    
+            words3 = w3(15-new_count)  
+    #半分は新しい単語、半分は習った覚えてないもの
     elif new_count>=8:
-        if no_count < 7:
-            words0 = w0(a=8)
-            words1 = w1(b=7-no_count)
+        if no_count < 6:
+            words0 = w0(a=9)
+            words1 = w1(b=6-no_count)
             words3 = w3(c=no_count)
         else:
-            words0 = w0(8)
-            words1 = w1(7)
+            words0 = w0(9)
+            words1 = w1(6)
             words3 = w3(0)
 
     return render_template('section.html', words=words1 + words3 + words0, section=section)
+
+@views.route('/sectionmistake/<int:section>')
+def mistake(section):
+    section=str(section)
+    words = Word1.query.order_by(func.random()).filter_by(section=section, learning='3').limit(15).all()
+    return render_template('section.html', words=words)
 
 @views.route('/section/up', methods=['POST'])    
 def section1_up():

@@ -19,7 +19,7 @@ $(function(){
         };
         var section_num = $(this).val();
         $('.start-btn').find('a').attr('href', '/section/'+section_num);        
-        $('.mistake-btn').find('a').attr('href', '/section/mistake/'+section_num);
+        $('.mistake-btn').find('a').attr('href', '/sectionmistake/'+section_num);
     })
 
     $('.start-hide').click(function(){
