@@ -11,9 +11,9 @@ views = Blueprint('views', __name__, url_prefix='/')
 
 @views.route('/', methods=['GET'])
 def home():
-    answer = db.session.query(Word1).filter_by(learning='1', section='1').count()
-    answered = Word1.query.filter_by(learning='0', section='1').count()
-    total = Word1.query.filter_by(section='1').count()
+    answer = db.session.query(Word1).filter_by(learning='1', section='2').count()
+    answered = Word1.query.filter_by(learning='0', section='2').count()
+    total = Word1.query.filter_by(section='2').count()
     answer_rate = round(answer / total * 100)
     answered = round((1- answered / total) * 100)
 

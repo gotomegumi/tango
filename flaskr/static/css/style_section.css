@@ -26,9 +26,9 @@
     max-width: 400px;
     height: 500px;
     text-align: center;
-    border: solid 4px black;
+    border: solid 4px rgb(97, 174, 219);
     border-radius: 25px;
-    box-shadow: rgb(255, 187, 0) 15px 15px, black 15px 15px 0 4px;
+    box-shadow: rgb(255, 187, 0) 10px 15px;
     z-index: 50;
     background-color: white;
     display: none;
@@ -37,9 +37,13 @@
 .active{
     display: block;
 }
+ 
+.card-sec-num{
+    margin-top: 10px;
+}
 
 .card-word{
-    margin-top: 30px;
+    margin-top: 10px;
     font-size: 70px;
 }
 
@@ -153,9 +157,9 @@
     font-size: 20px;
 }
 
-/* #result-bar, #result-bar2{
+#result-bar, #result-bar2{
     background-color: rgb(123, 220, 255);
-    transition: 0.7s;
+    transition: 1s;
     transform: translate(-100%, 0);
 }
 
@@ -163,7 +167,7 @@
     transform: translate(0, 0);
 
 }
- */
+
 .last-goto{
     margin-top: 40px;
 }
@@ -179,14 +183,12 @@
 
 .lg2{
     margin-top: 20px;
-    display: block;
+    display: inline-block;
+    font-size: 25px;
+    cursor: pointer;
 }
 
 @media screen and (max-width:600px){
-
-    .card-wrap{
-    }
-
     .indicater{
         width: 100%;
     }
@@ -214,6 +216,10 @@
         max-width: 400px;
         margin-left: 13px;
         margin-right: 23px;
+    }
+
+    .card-wrap.dark-theme{
+        margin-right: 15px;
     }
 }
 

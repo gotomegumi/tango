@@ -6,7 +6,7 @@
     <ul class="status-wrap">
         <li class="status box light-theme">
             <p>進歩</p>
-            <div class="bar-wrap bar1-wrap">
+            <div class="bar-wrap bar1-wrap light-theme">
                 <div class="bar bar1 light-theme" style="width:{{ progress }}%">{{ progress }}%</div>
             </div>
             <p>section1の{{ progress }}%を学習しました。</p>
@@ -15,7 +15,7 @@
         <li class="status box light-theme">
             <p class="st-text1">正解率</p>
             <!-- <p>{{ answer_rate }}%</p> -->
-            <div class="bar-wrap bar1-wrap">
+            <div class="bar-wrap bar1-wrap light-theme">
                 <div class="bar bar1 light-theme" style="width:{{ answer_rate }}%">{{ answer_rate }}%</div>
             </div>
             <p>section1の<span style="color: rgb(0, 117, 212);">{{ answer_rate }}%</span>を記憶しました。</p>
@@ -31,12 +31,12 @@
             <div class="section-bars">
                 <p>進捗</p>
                 <p class="prg-percent">{{ progress.answered }}%</p>
-                <div class="bar-wrap bar-se1-wrap">
+                <div class="bar-wrap bar-se1-wrap light-theme">
                     <div class="bar bar-se1 light-theme" style="width:{{ progress.answered }}%"></div>
                 </div>
                 <p>暗記</p>
                 <p class="ar-percent">{{ progress.answerrate }}%</p>
-                <div class="bar-wrap bar-se2-wrap">
+                <div class="bar-wrap bar-se2-wrap light-theme">
                     <div class="bar bar-se2 light-theme" style="width:{{ progress.answerrate }}%"></div>
                 </div>
             </div>

@@ -13,3 +13,4 @@ class Progress(db.Model):
     answerrate = db.Column(db.String())
     answered = db.Column(db.String())
     section = db.Column(db.String())
+

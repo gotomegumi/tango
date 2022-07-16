@@ -66,7 +66,7 @@
 }
 
 .section:hover{
-    background-color: rgb(255, 252, 244);
+    background-color: rgb(255, 243, 210);
 }
 
 .section:nth-child(2){
@@ -118,13 +118,20 @@
 }
 
 .section:nth-child(8){
-    box-shadow: 5px 5px aquamarine, 5px 5px 0 2px black;
+    box-shadow: 5px 5px rgb(147, 255, 219), 5px 5px 0 2px black;
 }
 
 .section:nth-child(8):hover{
-    background-color: aquamarine;
+    background-color: rgb(193, 255, 234);
 }
 
+.section:nth-child(9){
+    box-shadow: rgb(242, 87, 87) 5px 5px, black 5px 5px 0 2px;
+}
+
+.section:active{
+    box-shadow: none;
+}
 
 
 .section-bars{

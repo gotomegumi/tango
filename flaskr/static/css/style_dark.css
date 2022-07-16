@@ -39,14 +39,87 @@ label.dark-theme .slider{
     box-shadow: rgb(139, 190, 224) 3px 3px;
 }
 
+.bar1-wrap.dark-theme{
+    background-color: rgb(225, 255, 225);
+}
+
+.bar1.dark-theme{
+    background-color: rgb(119, 230, 167);
+}
+
 .bar.dark-theme{
     color: black;
 }
 
 .section.dark-theme{   
     box-shadow: rgb(223, 163, 0) 4px 4px;
-    border: solid 2px rgb(232, 170, 0);
+    border: solid 2px rgb(255, 185, 80);
 }
+
+.section.dark-theme:nth-child(2){
+    border: solid 2px rgb(228, 104, 104);
+    box-shadow: 4px 4px rgb(231, 96, 89);
+}
+
+.section.dark-theme:nth-child(3){
+    border: solid 2px rgb(151, 240, 138);
+    box-shadow: 5px 5px rgb(165, 239, 139);
+}
+
+.section.dark-theme:nth-child(4){
+    border: solid 2px rgb(138, 240, 240);
+    box-shadow: 5px 5px rgb(139, 219, 239);
+}
+
+.section.dark-theme:nth-child(5){
+    border: solid 2px rgb(237, 138, 240);
+    box-shadow: 5px 5px rgb(239, 139, 239);
+}
+
+.section.dark-theme:nth-child(6){
+    border: solid 2px rgb(240, 138, 138);
+    box-shadow: 5px 5px rgb(239, 139, 139);
+}
+
+.section.dark-theme:nth-child(7){
+    border: solid 2px rgb(138, 240, 192);
+    box-shadow: 5px 5px rgb(139, 239, 199);
+}
+
+.section.dark-theme:nth-child(8){
+    border: solid 2px rgb(231, 240, 138);
+    box-shadow: 5px 5px rgb(236, 239, 139);
+}
+
+.section.dark-theme:nth-child(9){
+    border: solid 2px rgb(150, 138, 240);
+    box-shadow: 5px 5px rgb(177, 139, 239);
+}
+
+.section.dark-theme:nth-child(10){
+    border: solid 2px rgb(240, 167, 138);
+    box-shadow: 5px 5px rgb(165, 239, 139);
+}
+
+.section.dark-theme:nth-child(11){
+    border: solid 2px rgb(151, 240, 138);
+    box-shadow: 5px 5px rgb(239, 176, 139);
+}
+
+.section.dark-theme:nth-child(12){
+    border: solid 2px rgb(209, 241, 246);
+    box-shadow: 5px 5px rgb(203, 237, 237);
+}
+
+
+.bar-se1-wrap.dark-theme{
+    background-color: rgb(187, 237, 255);
+}
+
+.bar-se2-wrap.dark-theme{
+    background-color: rgb(221, 255, 229);
+}
+
 
 .box.dark-theme:hover{
     background-color: rgb(29, 29, 29);
@@ -89,7 +162,6 @@ body.dark-theme{
     background-color: rgb(33, 33, 33);
     border: 3px solid rgb(230, 168, 0);
     box-shadow: rgb(230, 169, 2) 7px 10px;
-    margin-right: 20px;
 }
 
 .indicater{

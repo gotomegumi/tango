@@ -81,11 +81,11 @@ $(function(){
             .done(function(data){
                 $('#result').text(data);
                 $('#result-bar').attr('style', 'width:'+data+'%').text(data+'%')
-                $('.bar').addClass('visible');
-
+                $('#result-bar2').addClass('visible');
+                $('#result-bar').addClass('visible');
             })
             .fail(function(){
-                $('#result').text('Something went wrong...');
+                $('#result').text('no');
             })
         }
     
