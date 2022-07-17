@@ -14,6 +14,6 @@ class Progress(db.Model):
     answered = db.Column(db.String())
     section = db.Column(db.String())
 
-# class Mark(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     section = db.Column(db.String())
+class Mark(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    section = db.Column(db.String())

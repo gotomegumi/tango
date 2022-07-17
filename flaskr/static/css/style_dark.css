@@ -39,6 +39,10 @@ label.dark-theme .slider{
     box-shadow: rgb(139, 190, 224) 3px 3px;
 }
 
+.st-num.dark-theme{
+    color: rgb(155, 243, 255);
+}
+
 .bar1-wrap.dark-theme{
     background-color: rgb(225, 255, 225);
 }

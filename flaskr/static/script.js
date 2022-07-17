@@ -20,6 +20,12 @@ $(function(){
         var section_num = $(this).val();
         $('.start-btn').find('a').attr('href', '/section/'+section_num);        
         $('.mistake-btn').find('a').attr('href', '/sectionmistake/'+section_num);
+        $('.section-num').text('Section'+section_num)
+    })
+
+    $('#status2').click(function(){
+        var section=$(this).val()
+        $('.section.'+section).trigger('click')
     })
 
     $('.start-hide').click(function(){
@@ -76,7 +82,7 @@ $(function(){
             var section = $('#section-num').val()
             $.ajax({
                 url:'/section/result'+section,
-                type:'GET',
+                type:'GET'
             })
             .done(function(data){
                 $('#result').text(data);

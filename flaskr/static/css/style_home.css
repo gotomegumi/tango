@@ -16,8 +16,12 @@
     border: 3px solid black;
     box-shadow: rgb(156, 215, 255) 6px 6px, black 6px 6px 0 2px;
     font-size: large;
+    cursor: pointer;
 }
 
+.st-num{
+    color: rgb(0, 0, 209);
+}
 
 .box{
     border-radius: 15px;
