@@ -23,7 +23,7 @@ $(function(){
         $('.section-num').text('Section'+section_num)
     })
 
-    $('#status2').click(function(){
+    $('#status2, #status1').click(function(){
         var section=$(this).val()
         $('.section.'+section).trigger('click')
     })

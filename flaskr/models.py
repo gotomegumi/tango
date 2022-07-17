@@ -17,3 +17,8 @@ class Progress(db.Model):
 class Mark(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     section = db.Column(db.String())
+
+class Practice(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    date=db.Column(db.String())
+    practice=db.Column(db.String())

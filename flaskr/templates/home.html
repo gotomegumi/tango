@@ -2,16 +2,15 @@
 {% block title %}Tango{% endblock %}
 {% block content %}
 <div class="home">
-    <div>{{ section }}</div>
     <h2>Status</h2>
     <ul class="status-wrap">
-        <li class="status box light-theme" id="status2" value="{{ section }}">
+        <li class="status box light-theme" id="status1" value="{{ section }}">
             <p>進歩</p>
             <p>section{{ section }}</p>
             <div class="bar-wrap bar1-wrap light-theme">
                 <div class="bar bar1 light-theme" style="width:{{ progress }}%">{{ progress }}%</div>
             </div>
-            <p><span class="st-num light-theme">{{ progress }}%</span>を学習しました。</p>
+            <p class="st-text3"><span class="st-num light-theme">{{ progress }}%</span>を学習</p>
             <p class="st-text2">KEEP UP!</p>
         </li>
         <li class="status box light-theme" id="status2" value="{{ section }}">
@@ -20,7 +19,7 @@
             <div class="bar-wrap bar1-wrap light-theme">
                 <div class="bar bar1 light-theme" style="width:{{ answer_rate }}%">{{ answer_rate }}%</div>
             </div>
-            <p><span class="st-num light-theme">{{ answer_rate }}%</span>を記憶しました。</p>
+            <p class="st-text3"><span class="st-num light-theme">{{ answer_rate }}%</span>を記憶</p>
             <p class="st-text2">KEEP UP!</p>
         </li>
         <li class="status box light-theme"></li>
