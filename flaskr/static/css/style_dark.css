@@ -40,15 +40,15 @@ label.dark-theme .slider{
 }
 
 .st-num.dark-theme{
-    color: rgb(155, 243, 255);
+    color: rgb(254, 254, 254);
 }
 
 .bar1-wrap.dark-theme{
-    background-color: rgb(225, 255, 225);
+    background-color: rgb(209, 255, 209);
 }
 
 .bar1.dark-theme{
-    background-color: rgb(119, 230, 167);
+    background-color: rgb(0, 202, 88);
 }
 
 .bar.dark-theme{
@@ -116,13 +116,13 @@ label.dark-theme .slider{
 }
 
 
-.bar-se1-wrap.dark-theme{
+/* .bar-se1-wrap.dark-theme{
     background-color: rgb(187, 237, 255);
 }
 
 .bar-se2-wrap.dark-theme{
-    background-color: rgb(238, 255, 242);
-}
+    background-color: rgb(189, 255, 204);
+} */
 
 
 .box.dark-theme:hover{
@@ -138,9 +138,9 @@ label.dark-theme .slider{
 }
 
 .st2.dark-theme{
-    border: solid 3px rgb(136, 186, 219);
+    border: solid 3px rgb(255, 78, 78);
     box-shadow: none;
-    background-color: rgb(255, 117, 86);
+    background-color: rgb(255, 119, 98);
 }
 
 .box.dark-theme a{
@@ -148,7 +148,7 @@ label.dark-theme .slider{
 }
 
 .start-btn.dark-theme{
-    box-shadow: 4px 4px rgb(236, 113, 113);
+    box-shadow: 4px 4px rgb(236, 113, 150);
     border: solid 2px rgb(232, 107, 107);
 }
 
@@ -156,6 +156,12 @@ label.dark-theme .slider{
     box-shadow: 4px 4px rgb(228, 137, 95);
     border: solid 2px rgb(240, 145, 101);
 }
+
+.new-btn.dark-theme{
+    box-shadow: 4px 4px rgb(95, 179, 228);
+    border: solid 2px rgb(101, 196, 240);
+}
+
 
 body.dark-theme{
     background-color: rgb(24, 26, 27);

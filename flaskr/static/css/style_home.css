@@ -21,10 +21,12 @@
 
 .st-text3{
     white-space: none;
+    margin-top: 10px;
 }
 
 .st-num{
     color: rgb(0, 0, 209);
+    font-size: 30px;
 }
 
 .box{
@@ -46,21 +48,31 @@
 
 
 .bar-wrap{
-    border-radius: 10px;
+    border-radius: 7px;
 }
 
 .bar{
-    border-radius: 10px;
+    border-radius: 7px;
 }
 
-.bar1-wrap{
-    background-color: rgb(221, 243, 247);
+.bar1-prg-wrap{
+    background-color: rgb(191, 245, 255);
 }
 
-.bar1{
-    background-color: rgb(126, 216, 238);
-    line-height: 50px;
+.bar1-prg{
+    background-color: rgb(49, 187, 221);
+    height: 20px;
 }
+
+.bar1-ar-wrap{
+    background-color: rgb(218, 255, 204);
+}
+
+.bar1-ar{
+    background-color: rgb(75, 199, 83);
+    height: 20px;
+}
+
 
 .section{
     width: 600px;
@@ -162,7 +174,7 @@
 }
 
 .bar-se1{
-    background-color: rgb(44, 160, 255);
+    background-color: rgb(32, 121, 194);
     height: 8px;
 
 }
@@ -171,12 +183,12 @@
     width: 25%;
     margin: 3px 3px;
     height: 8px;
-    background-color: rgba(194, 255, 108, 0.551);
+    background-color: rgb(215, 255, 159);
 }
 
 .bar-se2{
     height: 8px;
-    background-color: rgb(142, 237, 9)
+    background-color: rgb(112, 186, 8)
 }
 
 .start-menu{
@@ -252,6 +264,7 @@
 
 .st1-2{
     font-size: 40px;
+    margin-top: 10px;
 }
 
 .st1-3{
@@ -267,6 +280,7 @@
 .st2-2{
     font-size: 40px;
     color: rgb(239, 247, 252);
+    margin-top: 10px;
 }
 
 .st2-3{
@@ -328,6 +342,17 @@
     text-align: center;
     font-size: 40px;
 }
+
+.new-btn{
+    line-height: 70px;
+    border-radius: 15px;
+    border: solid 2px black;
+    box-shadow: 7px 7px rgb(108, 233, 255), 7px 7px 0 2px black;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 40px;
+}
+
 
 .mistake-btn:active{
     position: relative;

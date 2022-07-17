@@ -87,6 +87,12 @@ def mistake(section):
     words = Word1.query.order_by(func.random()).filter_by(section=section, learning='3').limit(15).all()
     return render_template('section.html', words=words)
 
+@views.route('/sectionnew/<int:section>')
+def new(section):
+    section=str(section)
+    words = Word1.query.order_by(func.random()).filter_by(section=section, learning='0').limit(15).all()
+    return render_template('section.html', words=words)
+
 @views.route('/section/up', methods=['POST'])    
 def section1_up():
     word_id = request.form.get('id')

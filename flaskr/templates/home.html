@@ -7,19 +7,19 @@
         <li class="status box light-theme" id="status1" value="{{ section }}">
             <p>進歩</p>
             <p>section{{ section }}</p>
-            <div class="bar-wrap bar1-wrap light-theme">
-                <div class="bar bar1 light-theme" style="width:{{ progress }}%">{{ progress }}%</div>
+            <div class="bar-wrap bar1-prg-wrap light-theme">
+                <div class="bar bar1-prg light-theme" style="width:{{ progress }}%"></div>
             </div>
-            <p class="st-text3"><span class="st-num light-theme">{{ progress }}%</span>を学習</p>
+            <p class="st-text3"><span class="st-num light-theme">{{ progress }}%</span></p>
             <p class="st-text2">KEEP UP!</p>
         </li>
         <li class="status box light-theme" id="status2" value="{{ section }}">
             <p class="st-text1">正解率</p>
             <p>section{{ section }}</p>
-            <div class="bar-wrap bar1-wrap light-theme">
-                <div class="bar bar1 light-theme" style="width:{{ answer_rate }}%">{{ answer_rate }}%</div>
+            <div class="bar-wrap bar1-ar-wrap light-theme">
+                <div class="bar bar1-ar light-theme" style="width:{{ answer_rate }}%"></div>
             </div>
-            <p class="st-text3"><span class="st-num light-theme">{{ answer_rate }}%</span>を記憶</p>
+            <p class="st-text3"><span class="st-num light-theme">{{ answer_rate }}%</span></p>
             <p class="st-text2">KEEP UP!</p>
         </li>
         <li class="status box light-theme"></li>
@@ -74,6 +74,9 @@
     </div>
     <div class="mistake-btn box light-theme">
         <a href="#">覚えてない</a> 
+    </div>
+    <div class="new-btn box light-theme">
+        <a href="#">新しい</a> 
     </div>
     <h2 class="start-hide">←Home</h2>
 

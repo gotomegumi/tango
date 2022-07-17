@@ -20,6 +20,7 @@ $(function(){
         var section_num = $(this).val();
         $('.start-btn').find('a').attr('href', '/section/'+section_num);        
         $('.mistake-btn').find('a').attr('href', '/sectionmistake/'+section_num);
+        $('.new-btn').find('a').attr('href', '/sectionnew/'+section_num);
         $('.section-num').text('Section'+section_num)
     })
 
