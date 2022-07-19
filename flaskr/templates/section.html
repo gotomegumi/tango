@@ -6,7 +6,7 @@
 </div>
 <div class="item_wrapper">
     {% for word in words %}
-    <!-- <div class="card-wrap light-theme" value="{{ word.learning }}" >
+    <div class="card-wrap light-theme" value="{{ word.learning }}" >
         <p class="card-sec-num">section{{ section }}</p>
         <p class="card-word">{{ word.korean }}</p>
         <div></div>
@@ -20,7 +20,7 @@
             <button class="answer-btn light-theme btn3" value="3">✕</button>
         </form>
         <div class="show-btn-wrap"><p class="show-btn light-theme">答えを見る</p></div>
-    </div> -->
+    </div>
     {% endfor %}
     <div class="card-wrap light-theme last-card">
         <form action="" method=""><input id="section-num" type="hidden" value="{{ section }}" name="section"></form>
