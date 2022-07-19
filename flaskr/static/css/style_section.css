@@ -13,9 +13,6 @@
     transition: 0.5;
 }
 
-.item_wrapper{
-}
-
 .card-wrap{
     position: fixed;
     top: 110px;
@@ -120,7 +117,7 @@
 }
 
 .last-card{
-    padding: 40px 50px;
+    padding: 30px 50px;
 }
 
 .last-title-k{
@@ -128,37 +125,37 @@
 }
 
 .last-title{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }    
 
-
-.an-bar3-wrap{
-    background-color: rgba(118, 214, 249, 0.291);
-    line-height: 50px;
-    margin-bottom: 20px;
-    overflow: hidden;
-}
-
-.ar-bar3-wrap{
+.bar3-wrap{
     background-color: rgba(118, 214, 249, 0.329);
     line-height: 50px;
-    margin-bottom: 20px;
     overflow: hidden;
 }
 
-.an-bar3{
-    background-color: rgb(118, 214, 249);
-    color: black;
-}
-
-.ar-bar3{
-    background-color: rgb(118, 214, 249);
+.bar3{
     color: black;
     font-size: 20px;
 }
 
+.ar.bar3-wrap{
+    background-color: rgba(118, 214, 249, 0.329);
+}
+
+.ar.bar3{
+    background-color: rgb(118, 214, 249);
+}
+
+.prg.bar3-wrap{
+    background-color: rgba(118, 214, 249, 0.329);
+}
+
+.prg.bar3{
+    background-color: rgb(118, 255, 143);
+}
+
 #result-bar, #result-bar2{
-    background-color: rgb(123, 220, 255);
     transition: 1s;
     transform: translate(-100%, 0);
 }

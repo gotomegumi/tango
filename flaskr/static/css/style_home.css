@@ -14,14 +14,28 @@
     display: inline-block;
     flex-shrink: 0;
     border: 3px solid black;
-    box-shadow: rgb(156, 215, 255) 6px 6px, black 6px 6px 0 2px;
+    box-shadow: rgb(156, 215, 255) 6px 6px, black 6px 6px 0 3px;
     font-size: large;
     cursor: pointer;
 }
 
+.st-text-sec{
+    margin-top: 5px;
+    font-size: 25px;
+
+}
+
 .st-text3{
-    white-space: none;
-    margin-top: 10px;
+    font-size: 30px;
+}
+
+.st-text4{
+    font-size: 20px;
+    border: solid 1px black;
+    color: rgb(53, 133, 198);
+    padding: 0 20px;
+    border-radius: 5px;
+    display: inline-block;
 }
 
 .st-num{
@@ -41,10 +55,6 @@
 }
 
 
-.st-text2{
-    font-size: 20px;
-    color: rgb(0, 117, 212);
-}
 
 
 .bar-wrap{
@@ -65,7 +75,7 @@
 }
 
 .bar1-ar-wrap{
-    background-color: rgb(218, 255, 204);
+    background-color: rgb(230, 246, 229);
 }
 
 .bar1-ar{
@@ -168,9 +178,9 @@
 .bar-se1-wrap{
     width: 25%;
     margin: 3px 3px;
-    background-color: rgb(140, 203, 255);
+    background-color: rgb(209, 234, 255);
     height: 8px;
-
+    overflow: hidden;
 }
 
 .bar-se1{
@@ -183,12 +193,14 @@
     width: 25%;
     margin: 3px 3px;
     height: 8px;
-    background-color: rgb(215, 255, 159);
+    background-color: rgb(239, 255, 239);
+    overflow: hidden;
 }
 
 .bar-se2{
     height: 8px;
     background-color: rgb(112, 186, 8)
+    
 }
 
 .start-menu{
@@ -291,6 +303,7 @@
 
 .prg-bar4-wrap{
     background-color: rgb(221, 243, 247);
+    overflow: hidden;
 }
 
 .prg-bar4{
@@ -300,6 +313,7 @@
 
 .ar-bar4-wrap{
     background-color: rgb(221, 247, 221);
+    overflow: hidden;
 }
 
 .ar-bar4{
@@ -394,6 +408,10 @@
         padding: 5px 3px;
         display: inline-block;
         width: 43%;
+    }
+
+    .st-text-sec{
+        font-size: 22px;
     }
 
     .section{

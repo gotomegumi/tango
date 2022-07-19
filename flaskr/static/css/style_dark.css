@@ -43,6 +43,11 @@ label.dark-theme .slider{
     color: rgb(254, 254, 254);
 }
 
+.st-text4.dark-theme{
+    border: solid 1px rgb(185, 185, 185);
+    color: rgb(161, 236, 255);
+}
+
 .bar1-wrap.dark-theme{
     background-color: rgb(209, 255, 209);
 }
@@ -71,33 +76,33 @@ label.dark-theme .slider{
 }
 
 .section.dark-theme:nth-child(4){
-    border: solid 2px rgb(138, 240, 240);
-    box-shadow: 5px 5px rgb(139, 219, 239);
+    border: solid 2px rgb(158, 232, 232);
+    box-shadow: 5px 5px rgb(167, 232, 248);
 }
 
 .section.dark-theme:nth-child(5){
-    border: solid 2px rgb(237, 138, 240);
-    box-shadow: 5px 5px rgb(239, 139, 239);
+    border: solid 2px rgb(252, 172, 255);
+    box-shadow: 5px 5px rgb(253, 181, 253);
 }
 
 .section.dark-theme:nth-child(6){
-    border: solid 2px rgb(240, 138, 138);
-    box-shadow: 5px 5px rgb(239, 139, 139);
+    border: solid 2px rgb(255, 115, 115);
+    box-shadow: 5px 5px rgb(255, 100, 100);
 }
 
 .section.dark-theme:nth-child(7){
-    border: solid 2px rgb(138, 240, 192);
-    box-shadow: 5px 5px rgb(139, 239, 199);
+    border: solid 2px rgb(164, 247, 209);
+    box-shadow: 5px 5px rgb(178, 255, 224);
 }
 
 .section.dark-theme:nth-child(8){
-    border: solid 2px rgb(231, 240, 138);
-    box-shadow: 5px 5px rgb(236, 239, 139);
+    border: solid 2px rgb(255, 254, 165);
+    box-shadow: 5px 5px rgb(252, 255, 158);
 }
 
 .section.dark-theme:nth-child(9){
-    border: solid 2px rgb(150, 138, 240);
-    box-shadow: 5px 5px rgb(177, 139, 239);
+    border: solid 2px rgb(207, 200, 255);
+    box-shadow: 5px 5px rgb(213, 186, 255);
 }
 
 .section.dark-theme:nth-child(10){

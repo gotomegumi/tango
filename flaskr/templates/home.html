@@ -5,22 +5,22 @@
     <h2>Status</h2>
     <ul class="status-wrap">
         <li class="status box light-theme" id="status1" value="{{ section }}">
-            <p>進歩</p>
-            <p>section{{ section }}</p>
+            <p class="st-text1">進歩</p>
+            <p class="st-text-sec">section{{ section }}</p>
             <div class="bar-wrap bar1-prg-wrap light-theme">
                 <div class="bar bar1-prg light-theme" style="width:{{ progress }}%"></div>
             </div>
-            <p class="st-text3"><span class="st-num light-theme">{{ progress }}%</span></p>
-            <p class="st-text2">KEEP UP!</p>
+            <p class="st-text3">{{ progress }}%</p>
+            <p class="st-text4 light-theme">START!</p>
         </li>
         <li class="status box light-theme" id="status2" value="{{ section }}">
             <p class="st-text1">正解率</p>
-            <p>section{{ section }}</p>
+            <p class="st-text-sec">section{{ section }}</p>
             <div class="bar-wrap bar1-ar-wrap light-theme">
                 <div class="bar bar1-ar light-theme" style="width:{{ answer_rate }}%"></div>
             </div>
-            <p class="st-text3"><span class="st-num light-theme">{{ answer_rate }}%</span></p>
-            <p class="st-text2">KEEP UP!</p>
+            <p class="st-text3">{{ answer_rate }}%</p>
+            <p class="st-text4 light-theme">START!</p>
         </li>
         <li class="status box light-theme"></li>
     </ul>

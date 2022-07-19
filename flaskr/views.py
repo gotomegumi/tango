@@ -37,13 +37,8 @@ def test(section1):
         return Word1.query.order_by(func.random()).filter_by(section=section, learning='1').limit(b).all()
     def w3(c):
         return Word1.query.order_by(func.random()).filter_by(section=section, learning='3').limit(c).all()
-    #最初
-    if yes_count == 0 and no_count == 0:
-        words0 = w0(15)
-        words1 = w1(0)
-        words3 = w3(0)
     #すべての単語に目を通した
-    elif new_count == 0:
+    if new_count == 0:
         if yes_count >= 40:
             if no_count <15:
                 words0 = w0(0)
@@ -58,9 +53,8 @@ def test(section1):
             words0 = w0(0)
             words1 = w1(0)
             words3 = w3(15)
-    #もうすぐですべての単語を周回
-    elif new_count < 8:
-        if no_count < 8 - new_count + 7:
+    elif new_count < 15:
+        if no_count < 15 - new_count:
             words0 = w0(new_count)
             words1 = w1(15-no_count-new_count)  #15-no-new
             words3 = w3(no_count) 
@@ -68,30 +62,45 @@ def test(section1):
             words0 = w0(new_count)
             words1 = w1(0)
             words3 = w3(15-new_count)  
-    #半分は新しい単語、半分は習った覚えてないもの
-    elif new_count>=8:
-        if no_count < 6:
-            words0 = w0(a=9)
-            words1 = w1(b=6-no_count)
-            words3 = w3(c=no_count)
-        else:
-            words0 = w0(9)
-            words1 = w1(0)
-            words3 = w3(6)
+    elif new_count>=15:
+        words0 = w0(15)
+        words1 = w1(0)
+        words3 = w3(0)
+
+    #もうすぐですべての単語を周回
+    # elif new_count < 8:
+    #     if no_count < 8 - new_count + 7:
+    #         words0 = w0(new_count)
+    #         words1 = w1(15-no_count-new_count)  #15-no-new
+    #         words3 = w3(no_count) 
+    #     else:
+    #         words0 = w0(new_count)
+    #         words1 = w1(0)
+    #         words3 = w3(15-new_count)  
+    # #半分は新しい単語、半分は習った覚えてないもの
+    # elif new_count>=8:
+    #     if no_count < 6:
+    #         words0 = w0(a=9)
+    #         words1 = w1(b=6-no_count)
+    #         words3 = w3(c=no_count)
+    #     else:
+    #         words0 = w0(9)
+    #         words1 = w1(0)
+    #         words3 = w3(6)
 
     return render_template('section.html', words=words1 + words3 + words0, section=section)
 
-@views.route('/sectionmistake/<int:section>')
-def mistake(section):
-    section=str(section)
+@views.route('/sectionmistake/<int:section1>')
+def mistake(section1):
+    section=str(section1)
     words = Word1.query.order_by(func.random()).filter_by(section=section, learning='3').limit(15).all()
-    return render_template('section.html', words=words)
+    return render_template('section.html', words=words, section=section)
 
-@views.route('/sectionnew/<int:section>')
-def new(section):
-    section=str(section)
+@views.route('/sectionnew/<int:section1>')
+def new(section1):
+    section=str(section1)
     words = Word1.query.order_by(func.random()).filter_by(section=section, learning='0').limit(15).all()
-    return render_template('section.html', words=words)
+    return render_template('section.html', words=words, section=section)
 
 @views.route('/section/up', methods=['POST'])    
 def section1_up():
@@ -103,7 +112,7 @@ def section1_up():
     db.session.commit()
     return render_template('section.html') 
 
-@views.route('/section/result<int:section>', methods=['GET'])
+@views.route('/section/result<int:section>', methods=['POST'])
 def result(section):
     section=str(section)
     answer_count = Word1.query.filter_by(learning='1', section=section).count()
@@ -126,7 +135,8 @@ def result(section):
     mark.section = section
     db.session.commit()
 
-    return answer_rate
+    # return answer_rate
+    return jsonify({'answer_rate':answer_rate, 'answered':answered})
 
 @views.route('/reset/<int:section>')
 def reset(section):

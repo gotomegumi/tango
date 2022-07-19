@@ -60,7 +60,7 @@ $(function(){
     done_words = 0
     var total = $('.card-wrap').length -1;
 
-    $('#result-bar2').text('0/'+total)
+    $('.this-ar').text('0/'+total)
 
     $('.show-btn').click(function(){
         $(this).parents('.card-wrap').find('.card-meaning').css('display', 'block');
@@ -73,7 +73,6 @@ $(function(){
         var learning = $(this).val();
         $(this).parents('.answer').find('.learning').val(learning);
         var $displaycard = $('.active');
-        // $displaycard.find('#line1').attr('id', ' ');
         $displaycard.removeClass('active');
         $displaycard.next().addClass('active');
         id = setTimeout(fn, tm );
@@ -83,16 +82,17 @@ $(function(){
             var section = $('#section-num').val()
             $.ajax({
                 url:'/section/result'+section,
-                type:'GET'
+                type:'POST',
             })
             .done(function(data){
-                $('#result').text(data);
-                $('#result-bar').attr('style', 'width:'+data+'%').text(data+'%')
-                $('#result-bar2').addClass('visible');
+                $('#result-bar').attr('style', 'width:'+data['answer_rate']+'%').text(data['answer_rate']+'%')
+                $('#result-bar2').attr('style', 'width:'+data['answered']+'%').text(data['answered']+'%')
                 $('#result-bar').addClass('visible');
+                $('#result-bar2').addClass('visible');
+
             })
             .fail(function(){
-                $('#result').text('no');
+                $('#result-bar').text('no');
             })
         }
     
@@ -100,7 +100,8 @@ $(function(){
 
     $('.btn1').click(function(){
         remembered_words++;
-        $('#result-bar2').attr('style', 'width:'+remembered_words/total*100+'%').text(remembered_words+'/'+total)
+        // $('#result-bar2').attr('style', 'width:'+remembered_words/total*100+'%').text(remembered_words+'/'+total)
+        $('.this-ar').text(remembered_words+'/'+total)
     })
 
     $('.answer').submit(function(e){
@@ -119,20 +120,6 @@ $(function(){
     $('.lg2').click(function(){
         window.location.reload(false);
     })
-
-
-    $('.start').click(function(){
-        $('#start-section').submit();
-    })
-
-    $('.cover, .start-back').click(function(){
-        $('.start-modal, .cover').hide();
-        $('.home').show();
-    })
-
-    $('#progressbar').progressbar({
-        value:50
-    });
 
     var dark = $.cookie('dark-mode');
     if(dark){
