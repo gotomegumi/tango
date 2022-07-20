@@ -1,4 +1,7 @@
 $(function(){
+
+    // $(window).scrollTop(900);
+    
     $('.section').click(function(){
         var prg = $(this).find('.section-bars').find('.prg-percent').html();
         var ar = $(this).find('.section-bars').find('.ar-percent').html();
@@ -51,7 +54,7 @@ $(function(){
     });
 
     var fn = function(){
-        $('.active').find('.card-meaning').show();
+        $('.active').find('.card-meaning, .card-pron').show();
     }
     var tm = 8000;
     var id = setTimeout(fn,tm);
@@ -63,7 +66,7 @@ $(function(){
     $('.this-ar').text('0/'+total)
 
     $('.show-btn').click(function(){
-        $(this).parents('.card-wrap').find('.card-meaning').css('display', 'block');
+        $(this).parents('.card-wrap').find('.card-meaning, .card-pron').css('display', 'block');
         clearTimeout(id);
     });
 

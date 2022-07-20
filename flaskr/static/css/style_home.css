@@ -1,40 +1,40 @@
-.status-wrap{
+
+
+.status-box-wrap{
     display: flex;
     margin-bottom: 20px;
 }
 
 .status{
     text-align: center;
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 220px;
     border-radius:  15px;
     margin-right: 20px;
     margin-bottom: 13px;
     padding: 20px 10px 10px;
     display: inline-block;
     flex-shrink: 0;
-    border: 3px solid black;
-    box-shadow: rgb(156, 215, 255) 6px 6px, black 6px 6px 0 3px;
+    border: 2px solid black;
+    box-shadow: rgb(168, 235, 215) 6px 6px;
     font-size: large;
     cursor: pointer;
 }
 
-.st-text-sec{
-    margin-top: 5px;
-    font-size: 25px;
+.st-text1{
+    font-size: 20px;
+}
 
+.st-text-sec{
 }
 
 .st-text3{
-    font-size: 30px;
 }
 
 .st-text4{
     font-size: 20px;
-    border: solid 1px black;
     color: rgb(53, 133, 198);
-    padding: 0 20px;
-    border-radius: 5px;
+    font-weight: bold;
     display: inline-block;
 }
 
@@ -54,33 +54,31 @@
     box-shadow: none;
 }
 
-
-
-
 .bar-wrap{
-    border-radius: 7px;
+    border-radius: 13px;
 }
 
 .bar{
-    border-radius: 7px;
+    border-radius: 13px;
 }
 
 .bar1-prg-wrap{
-    background-color: rgb(191, 245, 255);
+    background-color: #EEEEEE;
 }
 
 .bar1-prg{
-    background-color: rgb(49, 187, 221);
-    height: 20px;
+    background-color: rgb(104, 215, 243);
+    height: 50px;
 }
 
 .bar1-ar-wrap{
-    background-color: rgb(230, 246, 229);
+    background-color: #EEEEEE;
+    overflow: hidden;
 }
 
 .bar1-ar{
-    background-color: rgb(75, 199, 83);
-    height: 20px;
+    background-color: rgb(94, 238, 104);
+    height: 50px;
 }
 
 
@@ -193,7 +191,7 @@
     width: 25%;
     margin: 3px 3px;
     height: 8px;
-    background-color: rgb(239, 255, 239);
+    background-color: #EEEEEE;
     overflow: hidden;
 }
 
@@ -398,7 +396,7 @@
         display: none;
     }
 
-    .status-wrap{
+    .status-box-wrap{
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
@@ -408,10 +406,6 @@
         padding: 5px 3px;
         display: inline-block;
         width: 43%;
-    }
-
-    .st-text-sec{
-        font-size: 22px;
     }
 
     .section{
@@ -433,9 +427,36 @@
 
 }
 
-@media screen and (max-width:350px){
+@media screen and (max-width:450px){
+    .status{
+        height: 180px;
+    }
+
+    .status-box-wrap{
+        margin-bottom: 0;
+    }
+    
     .section{
         padding: 10px 10px;
+    }
+
+    .status-wrap{
+        width: 100%;
+        height: 290px;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        background-color: rgb(255, 255, 255);
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+
+    #sections{
+        margin-top: 380px;
+    }
+
+    .section-title1{
+        height: 30px;
     }
 }
 
