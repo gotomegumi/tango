@@ -2,6 +2,7 @@
     --dark-color:rgb(224, 224, 224);
     --dark-border: rgb(182, 182, 182);
     --dark-bgc:rgb(37, 40, 45);
+    --dark-bgc2: rgb(24, 26, 27);
 }
 
 *{
@@ -95,15 +96,27 @@ label{
 }
 
 .nav-btn{
-    margin-right: 10px;
-    margin-top: 10px;
+    position: fixed;
+    top: 5px;
+    right: 10px;
     width: 60px;
-    border-radius: 30px;
+    border-radius: 15px;
     border: solid 2px black;
-    height: 60px;
+    line-height: 60px;
     background-color: white;
-    box-shadow: 3px 3px orange, 3px 3px 0 1px black;
+    box-shadow: 2px 2px orange, 2px 2px 0 1px black;
     display: none;
+    padding-left: 3px;
+}
+
+label{
+    margin-right: 90px;
+}
+
+.nav-btn:active{
+    top: 7px;
+    right: 8px;
+    box-shadow: none;
 }
 
 .content-wrap{

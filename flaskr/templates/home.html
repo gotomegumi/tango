@@ -2,7 +2,7 @@
 {% block title %}Tango{% endblock %}
 {% block content %}
 <div class="home">
-    <div class="status-wrap"> 
+    <div class="status-wrap light-theme"> 
         <h2>Status</h2>
         <ul class="status-box-wrap">
             <li class="status box light-theme" id="status1" value="{{ section }}">
@@ -12,7 +12,7 @@
                     <div class="bar bar1-prg light-theme" style="width:{{ progress }}%"></div>
                 </div>
                 <p class="st-text3">{{ progress }}%</p>
-                <p class="st-text4 light-theme">START!</p>
+                <p class="st-text4 light-theme">スタート!</p>
             </li>
             <li class="status box light-theme" id="status2" value="{{ section }}">
                 <p class="st-text1">正解率</p>
@@ -21,7 +21,7 @@
                     <div class="bar bar1-ar light-theme" style="width:{{ answer_rate }}%"></div>
                 </div>
                 <p class="st-text3">{{ answer_rate }}%</p>
-                <p class="st-text4 light-theme">START!</p>
+                <p class="st-text4 light-theme">スタート!</p>
             </li>
             <li class="status box light-theme"></li>
         </ul>
@@ -34,7 +34,7 @@
     <div id="sections">
         {% for progress in progresses %}
         <li class="section box light-theme {{ progress.section }}" value="{{ progress.section }}">
-            <p>section{{ progress.section }} : 特に分類なし</p>
+            <p>Section{{ progress.section }} : 特に分類なし</p>
             <div class="section-bars">
                 <p>進捗</p>
                 <p class="prg-percent">{{ progress.answered }}%</p>
@@ -76,7 +76,7 @@
         </div>
     </div> 
     <div class="start-btn box light-theme">
-        <a href="#">시작하다</a> 
+        <a href="#">始める</a> 
     </div>
     <div class="mistake-btn box light-theme">
         <a href="#">覚えてない</a> 
