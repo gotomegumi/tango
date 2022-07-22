@@ -8,14 +8,19 @@
     {% for word in words %}
     <div class="card-wrap light-theme" value="{{ word.learning }}" >
         <p class="card-sec-num">section{{ section }}</p>
-        <p class="card-word">{{ word.korean }}</p>
-        <div></div>
-        <p class="card-meaning">{{ word.meaning }}</p>
-        <p class="card-pron">{{ word.pronounce }}</p>
+        <div class="card-word light-theme">
+            <p>{{ word.korean }}</p>
+        </div>
+        
+        <div class="card-hidden">
+            <p class="card-meaning">{{ word.meaning }}</p>
+            <p class="card-pron">{{ word.pronounce }}</p>
+        </div>
+        
         <form class="answer" type="POST" action="/section/up">
             <input type="hidden" class="id" value="{{ word.id }}" name="id">
             <input type="hidden" class="learning" name="learning">
-            <button class="answer-btn light-theme btn1 last-btn" value="1">◯</button>
+            <button class="answer-btn light-theme btn1 last-btn" value="1">〇</button>
             <button class="answer-btn light-theme btn3" value="2">△</button>
             <button class="answer-btn light-theme btn3" value="3">✕</button>
         </form>
