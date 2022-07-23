@@ -178,8 +178,8 @@ body.dark-theme{
 
 .card-wrap.dark-theme{
     background-color: rgb(33, 33, 33);
-    border: 3px solid rgb(230, 168, 0);
-    box-shadow: rgb(230, 169, 2) 7px 10px;
+    border: 3px solid rgb(195, 248, 255);
+    box-shadow: 2px 5px rgb(195, 248, 255);
 }
 
 .indicater{
@@ -196,7 +196,7 @@ body.dark-theme{
 
 .answer-btn.dark-theme{
     background-color: rgb(31, 31, 31);
-    border: 3px solid rgb(205, 150, 0);
+    border: 3px solid rgb(173, 245, 255);
     color: white;
     box-shadow: none;
 }
