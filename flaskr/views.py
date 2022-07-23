@@ -109,6 +109,7 @@ def section1_up():
     word = Word1.query.filter_by(id=word_id).first()
 
     word.learning = learning
+    word.review = learning
     db.session.commit()
     return render_template('section.html') 
 
@@ -118,8 +119,16 @@ def result(section):
     answer_count = Word1.query.filter_by(learning='1', section=section).count()
     answered_count = Word1.query.filter_by(learning='0', section=section).count()
     total = Word1.query.filter_by(section=section).count()
-    answer_rate = str(round(answer_count / total * 100))
-    answered = round((1- answered_count / total) * 100)
+    if answer_count == total:
+        answer_rate = 100
+    else:
+        answer_rate = str(round(answer_count / total * 100))
+    if answered_count == total:
+        answered = 100
+    else:
+        answered = round((1- answered_count / total) * 100)
+
+
 
     progress = Progress.query.filter_by(section=section).first()
     if progress:
@@ -147,6 +156,19 @@ def reset(section):
     progress = Progress.query.filter_by(section=section).first()
     progress.answerrate = 0
     progress.answered = 0
+    db.session.commit()
+
+    return redirect('/')
+
+@views.route('/clear/<int:section>')
+def clear(section):
+    section=str(section)
+    words = Word1.query.filter_by(section=section, learning='3').all()
+    for word in words:
+        word.learning = 0
+    progress = Progress.query.filter_by(section=section).first()
+    answer_rate = progress.answerrate
+    progress.answered = answer_rate
     db.session.commit()
 
     return redirect('/')

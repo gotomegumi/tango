@@ -22,3 +22,4 @@ class Practice(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date=db.Column(db.String())
     practice=db.Column(db.String())
+
