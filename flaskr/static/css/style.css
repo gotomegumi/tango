@@ -89,24 +89,50 @@ label{
     display: flex;
 }
 
+
 .nav-link a{
     color: black;
     text-decoration: none;
     margin-right: 40px;
 }
 
+.nav-btn-wrap{
+    display: none;
+}
+
 .nav-btn{
-    position: fixed;
-    top: 5px;
-    right: 10px;
     width: 60px;
     border-radius: 15px;
     border: solid 2px black;
-    line-height: 60px;
+    height: 60px;
     background-color: white;
-    box-shadow: 2px 2px orange, 2px 2px 0 1px black;
-    display: none;
-    padding-left: 3px;
+    box-shadow: 2px 2px rgb(0, 195, 255), 2px 2px 0 1px black;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: fixed;
+    top: 7px;
+    right: 10px;
+}
+
+.nav-btn span::after,
+.nav-btn span,
+.nav-btn span::before{
+    width: 45px;
+    height: 5px;
+    background-color: rgb(129, 223, 235);
+    content: '';
+    display: block;
+    border-radius: 3px;
+    position: absolute;
+}
+
+.nav-btn span::after{
+    top: 13px;
+}
+
+.nav-btn span::before{
+    bottom: 13px;
 }
 
 label{
@@ -114,7 +140,7 @@ label{
 }
 
 .nav-btn:active{
-    top: 7px;
+    top: 10px;
     right: 8px;
     box-shadow: none;
 }
@@ -130,7 +156,7 @@ label{
 
 
 @media screen and (max-width:600px){
-    .nav-btn{
+    .nav-btn-wrap{
         display: block;
     }
 }

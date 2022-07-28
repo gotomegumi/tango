@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="../static/css/style_section.css">
         <link rel="stylesheet" href="../static/css/style_home.css">
         <link rel="stylesheet" href="../static/css/style_dark.css">
+        <link rel="stylesheet" href="../static/css/section.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -28,11 +29,14 @@
                 <li class="nav-link"><a href="#">acount</a></li>
                 <li class="nav-link"><a href="#">progress</a></li>
             </nav>
-             
-        </header>
-        <div class="nav-btn light-theme">
-                <p>menu</p>
+            <div class="nav-btn-wrap">
+                <div class="nav-btn light-theme">
+                    <span></span>
+                </div>
             </div>
+            
+ 
+        </header>
         <div class="content-wrap">
         {% block content %}
         {% endblock %}
