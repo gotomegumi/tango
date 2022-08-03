@@ -22,6 +22,12 @@ $(function(){
         }
     })
 
+    // $(function(){
+    //     var userAgent = window.navigator.userAgent.toLowerCase();
+        
+    //     if(userAgent.indexOf('android'))
+    // })
+
     $('.section').click(function(){
         var prg = $(this).find('.section-bars').find('.prg-percent').html();
         var ar = $(this).find('.section-bars').find('.ar-percent').html();

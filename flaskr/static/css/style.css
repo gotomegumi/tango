@@ -106,7 +106,7 @@ label{
     border: solid 2px black;
     height: 60px;
     background-color: white;
-    box-shadow: 2px 2px rgb(0, 195, 255), 2px 2px 0 1px black;
+    box-shadow: 3px 3px rgb(1, 163, 212);
     align-items: center;
     justify-content: center;
     display: flex;

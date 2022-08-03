@@ -54,12 +54,21 @@ label.dark-theme .slider{
 }
 
 .bar1-ar-wrap.dark-theme{
-    background-color: #37ff0039;
+    background-color: #a8a8a8;
 }
 
 .bar1-prg-wrap.dark-theme{
-    background-color: #395dff3d;
+    background-color: #a8a8a8;
 }
+
+.bar1-ar.dark-theme{
+    background-color: #7ca159;
+}
+
+.bar1-prg.dark-theme{
+    background-color: #5995a1;
+}
+
 
 .bar.dark-theme{
     color: black;
