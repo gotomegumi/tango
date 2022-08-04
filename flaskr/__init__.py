@@ -31,12 +31,6 @@ def create_app():
     from .models import Progress
     from .models import Mark
 
-    # db.create_all(app=app)
-
-
-
-
-
     admin = Admin(app)
     admin.add_view(ModelView(Word1, db.session))
     admin.add_view(ModelView(Progress, db.session))
